@@ -15,7 +15,7 @@ import com.view.circulartimerview.CircularTimerListener;
 import com.view.circulartimerview.CircularTimerView;
 import com.view.circulartimerview.TimeFormatEnum;
 
-public class Fragment_first_game_assignment extends Fragment {
+public class FragmentFirstGameAssignment extends Fragment {
 
     CircularTimerView progressBar;
 

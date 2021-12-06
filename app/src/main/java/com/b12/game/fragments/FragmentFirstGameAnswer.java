@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.b12.game.R;
 
-public class Fragment_first_game_answer extends Fragment {
+public class FragmentFirstGameAnswer extends Fragment {
 
     @Nullable
     @Override
