@@ -3,10 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
-        <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/activity_splash.xml" value="0.17552083333333332" />
-        <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/fragment_first_game_answer.xml" value="0.17552083333333332" />
-        <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Android Development/SquidGame/app/src/main/res/drawable/ic_baseline_play_circle_outline_24.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android Development/SquidGame/app/src/main/res/layout/activity_main.xml" value="0.1703125" />
+        <entry key="..\:/Android Development/SquidGame/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Android Development/SquidGame/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.1703125" />
       </map>
     </option>
   </component>
