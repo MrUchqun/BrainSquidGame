@@ -17,10 +17,11 @@
     </style>
 
     <style name="CardStyleGame1">
-        <item name="android:layout_marginStart">5dp</item>
-        <item name="android:layout_marginEnd">5dp</item>
-        <item name="android:layout_marginTop">5dp</item>
-        <item name="android:layout_marginBottom">5dp</item>
+<!--        <item name="android:layout_marginStart">5dp</item>-->
+<!--        <item name="android:layout_marginEnd">5dp</item>-->
+<!--        <item name="android:layout_marginTop">5dp</item>-->
+<!--        <item name="android:layout_marginBottom">5dp</item>-->
+        <item name="android:layout_margin">10dp</item>
         <item name="cardCornerRadius">10dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_width">0dp</item>
@@ -29,7 +30,17 @@
     </style>
 
     <style name="TextViewInCardGame1">
-        <item name="android:textSize">36sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ImageViewInCardGame1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
     </style>
 </resources>
