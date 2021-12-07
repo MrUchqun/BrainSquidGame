@@ -1,7 +1,5 @@
 package com.b12.game.fragments;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +28,7 @@ public class FragmentFirstGameAssignment extends Fragment {
     private TextView levelTxt;
     private ImageView imageViewInCard;
     private final Random rnd = new Random();
+    private ImageView img_1, img_2, img_3, img_4;
 
     @Nullable
     @Override
@@ -42,11 +41,21 @@ public class FragmentFirstGameAssignment extends Fragment {
         relativeLayout = view.findViewById(R.id.first_game_answer_relative_layout);
         progressBar.setProgress(0);
         countDownTimer();
+        generateImage(view);
 
 
         return view;
     }
 
+    private void generateImage(View view) {
+        ImageView[] images = new ImageView[]{img_1, img_2, img_3, img_4};
+        int[] res = new int[]{R.id.image_1, R.id.image_2, R.id.image_3, R.id.image_4,};
+        int[] drawables = new int[]{R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4,};
+        for (int i = 0; i < images.length; i++) {
+            images[i] = (ImageView) view.findViewById(res[i]);
+            images[i].setImageResource(drawables[i]);
+        }
+    }
 
 
     private void countDownTimer() {

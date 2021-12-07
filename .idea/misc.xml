@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/drawable/page_background_gradient.xml" value="0.19166666666666668" />
         <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/activity_splash.xml" value="0.17552083333333332" />
         <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/fragment_first_game_answer.xml" value="0.17552083333333332" />
-        <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.22" />
       </map>
     </option>
   </component>
