@@ -1,7 +1,7 @@
 package com.b12.game.fragments;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +22,7 @@ import com.b12.game.adapters.FirstGameAdapter;
 import com.b12.game.getset.FirstGameItem;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -30,6 +31,7 @@ public class FragmentFirstGameAssignment extends Fragment {
     private FirstGameAdapter adapter;
     private ArrayList<FirstGameItem> gameItems;
     private ArrayList<FirstGameItem> tempItems;
+    private ArrayList<Integer> list;
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
     private RelativeLayout relativeLayout;
@@ -37,8 +39,7 @@ public class FragmentFirstGameAssignment extends Fragment {
     private ImageView imageViewInCard;
     private ProgressBar progressBarHorizontal;
     private final Random rnd = new Random();
-    int counter = 0, timer = 0;
-    CountDownTimer countDownTimer;
+    int counter = 0;
 
 
     @Nullable
@@ -49,6 +50,7 @@ public class FragmentFirstGameAssignment extends Fragment {
         splashActivity.changeStatusBarColor(getActivity());
         tempItems = new ArrayList<>();
         gameItems = new ArrayList<>();
+        list = new ArrayList<>();
         circler_progress_txt = view.findViewById(R.id.progress_circular_text);
         progressBarHorizontal = view.findViewById(R.id.horizontal_progress_bar);
         recyclerView = view.findViewById(R.id.first_game_recycler);
@@ -57,7 +59,9 @@ public class FragmentFirstGameAssignment extends Fragment {
         progressBar = view.findViewById(R.id.progress_circular);
         relativeLayout = view.findViewById(R.id.first_game_answer_relative_layout);
         progressBarHorizontal.setVisibility(View.GONE);
+        imageViewInCard.setVisibility(View.GONE);
         countDownTimer();
+
 
         generateImage();
 
@@ -66,17 +70,17 @@ public class FragmentFirstGameAssignment extends Fragment {
     }
 
     private void getRandomImageFromArray() {
-        int index = 1;
-        tempItems.add(new FirstGameItem(R.drawable.img_1, 0));
-        tempItems.add(new FirstGameItem(R.drawable.img_2, 1));
-        tempItems.add(new FirstGameItem(R.drawable.img_3, 2));
-        tempItems.add(new FirstGameItem(R.drawable.img_4, 3));
-
-
-            index = (int) (Math.random() * tempItems.size());
-
-        gameItems.add(tempItems.get(index));
-        imageViewInCard.setImageResource(index);
+//        int index = 1;
+//        tempItems.add(new FirstGameItem(R.drawable.img_1, 0));
+//        tempItems.add(new FirstGameItem(R.drawable.img_2, 1));
+//        tempItems.add(new FirstGameItem(R.drawable.img_3, 2));
+//        tempItems.add(new FirstGameItem(R.drawable.img_4, 3));
+//
+//
+//        index = (int) (Math.random() * tempItems.size());
+//
+//        gameItems.add(tempItems.get(index));
+//        imageViewInCard.setImageResource(index);
     }
 
     private void generateImage() {
@@ -90,6 +94,9 @@ public class FragmentFirstGameAssignment extends Fragment {
             int value = random.nextInt(4);
             gameItems.add(tempItems.get(value));
         }
+        HashMap<FirstGameItem, Integer> hashMap = new HashMap<>();
+
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 4));
         recyclerView.setItemAnimator(null);
@@ -99,36 +106,32 @@ public class FragmentFirstGameAssignment extends Fragment {
 
     }
 
-
     private void countDownTimer() {
-
-        countDownTimer = new CountDownTimer(10*50*20, 100) {
-            // 500 means, onTick function will be called at every 500 milliseconds
-
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onTick(long leftTimeInMilliseconds) {
-                long seconds = leftTimeInMilliseconds / 1000;
-                int barVal = (counter) - ((int) (seconds / 60 * 100) + (int) (seconds % 60));
-                progressBar.setProgress(barVal);
-                circler_progress_txt.setText(String.format("%02d", seconds % 60));
-                // format the textview to show the easily readable format
-
-            }
-
-            @Override
-            public void onFinish() {
-                if (circler_progress_txt.getText().equals("00")) {
-                    circler_progress_txt.setText("Timer Out");
+            public void run() {
+                if (counter <= 10) {
+                    circler_progress_txt.setText("" + counter);
+                    progressBar.setProgress(counter);
+                    counter++;
+                    handler.postDelayed(this::run, 1000);
                 } else {
-                    circler_progress_txt.setText("00");
+                    handler.removeCallbacks(this::run);
+                    progressBar.setVisibility(View.GONE);
+                    recyclerView.setVisibility(View.GONE);
+                    circler_progress_txt.setVisibility(View.GONE);
+                    relativeLayout.setVisibility(View.VISIBLE);
+                    progressBarHorizontal.setVisibility(View.VISIBLE);
+                    imageViewInCard.setVisibility(View.VISIBLE);
+                    progressBarHorizontalTimer();
                 }
             }
-        }.start();
-
+        }, 100);
     }
 
-    private void progressBarHorizontalTimer() {
 
+    private void progressBarHorizontalTimer() {
         final Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override

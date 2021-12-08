@@ -13,4 +13,5 @@
     <color name="page_background_gradient_right">#4776E6</color>
     <color name="page_background_gradient_left">#8E54E9</color>
     <color name="button_color">#26A9E0</color>
+    <color name="light_pink">#FE57ED</color>
 </resources>
