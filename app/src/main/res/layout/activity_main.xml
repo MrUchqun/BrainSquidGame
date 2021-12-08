@@ -9,16 +9,16 @@
 
         <LinearLayout
             android:layout_marginBottom="40dp"
-            android:padding="5dp"
+            android:padding="10dp"
             android:orientation="vertical"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/help_icon"
-                android:src="@drawable/ic_baseline_help_outline_24"
+                android:src="@drawable/brain_image_one"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="130dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/game_iconic_picture" />
             <TextView
