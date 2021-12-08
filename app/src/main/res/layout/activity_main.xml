@@ -22,6 +22,7 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/game_iconic_picture" />
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/brain_suid_game_text"
                 android:layout_marginTop="20dp"
                 android:text="@string/game_name"
@@ -35,7 +36,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/play_game_1"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#8291D9"
+                app:cardBackgroundColor="@color/button_color"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:layout_width="match_parent"
@@ -89,7 +90,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/play_game_2"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#8291D9"
+                app:cardBackgroundColor="@color/button_color"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:layout_width="match_parent"
@@ -144,7 +145,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/play_game_3"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#8291D9"
+                app:cardBackgroundColor="@color/button_color"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:layout_width="match_parent"
@@ -199,7 +200,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/settings"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#8291D9"
+                app:cardBackgroundColor="@color/button_color"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:layout_width="match_parent"
@@ -254,7 +255,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/about_us"
                 android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#8291D9"
+                app:cardBackgroundColor="@color/button_color"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:layout_width="match_parent"
