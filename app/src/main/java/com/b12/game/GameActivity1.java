@@ -36,5 +36,6 @@ public class GameActivity1 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         gridLayout.setVisibility(View.VISIBLE);
+        super.onBackPressed();
     }
 }

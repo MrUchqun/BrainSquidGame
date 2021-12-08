@@ -4,8 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Development/Game/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2203125" />
-        <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_game1.xml" value="0.2" />
-        <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_game1.xml" value="0.25" />
         <entry key="..\:/Android Development/SquidGame/app/src/main/res/drawable/ic_baseline_play_circle_outline_24.xml" value="0.2074074074074074" />
         <entry key="..\:/Android Development/SquidGame/app/src/main/res/layout/activity_game1.xml" value="0.17192982456140352" />
         <entry key="..\:/Android Development/SquidGame/app/src/main/res/layout/activity_main.xml" value="0.1703125" />
@@ -14,6 +13,12 @@
         <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/activity_game1.xml" value="0.20260416666666667" />
         <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/first_game_item_layout.xml" value="0.1" />
         <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.25" />
+        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/drawable/ic_baseline_help_outline_24.xml" value="0.290625" />
+        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_game1.xml" value="0.25" />
+        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_splash.xml" value="0.1644021739130435" />
+        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/first_game_item_layout.xml" value="0.1644021739130435" />
+        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.1644021739130435" />
       </map>
     </option>
   </component>
