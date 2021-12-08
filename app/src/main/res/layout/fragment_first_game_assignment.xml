@@ -56,21 +56,35 @@
 
     </androidx.cardview.widget.CardView>
 
-    <com.view.circulartimerview.CircularTimerView
-        android:id="@+id/progress_circular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_below="@id/first_game_assignment_image_view_card"
-        app:backgroundColor="@color/white"
-        app:backgroundWidth="8"
-        app:isClockwise="true"
-        app:maxValue="100"
-        app:progressBackgroundColor="@color/green"
-        app:progressColor="@color/white"
-        app:progressTextColor="@color/green"
-        app:startingPoint="left"
-        app:textSize="18sp" />
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progressDrawable="@drawable/circler_timer_background"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/progress_circular_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="0"
+            android:textColor="@color/green"
+            android:textSize="50sp" />
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/first_game_answer_relative_layout"
