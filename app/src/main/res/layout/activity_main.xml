@@ -41,7 +41,9 @@
                 app:cardCornerRadius="30dp"
                 android:layout_height="0dp"
                 android:layout_weight="17"
-                android:focusable="true">
+                android:focusable="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -50,7 +52,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:paddingVertical="7dp"
                         app:cardBackgroundColor="#5E5B5B">
 
                         <TextView
@@ -94,7 +95,9 @@
                 app:cardCornerRadius="30dp"
                 android:layout_height="0dp"
                 android:layout_weight="17"
-                android:focusable="true">
+                android:focusable="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -103,7 +106,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:paddingVertical="7dp"
                         app:cardBackgroundColor="#5E5B5B">
 
                         <TextView
@@ -147,7 +149,9 @@
                 app:cardCornerRadius="30dp"
                 android:layout_height="0dp"
                 android:layout_weight="17"
-                android:focusable="true">
+                android:focusable="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -156,7 +160,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:paddingVertical="7dp"
                         app:cardBackgroundColor="#5E5B5B">
 
                         <TextView
@@ -200,7 +203,9 @@
                 app:cardCornerRadius="30dp"
                 android:layout_height="0dp"
                 android:layout_weight="17"
-                android:focusable="true">
+                android:focusable="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -209,7 +214,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:paddingVertical="7dp"
                         app:cardBackgroundColor="#5E5B5B">
 
                         <TextView
@@ -253,7 +257,9 @@
                 app:cardCornerRadius="30dp"
                 android:layout_height="0dp"
                 android:layout_weight="17"
-                android:focusable="true">
+                android:focusable="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -262,7 +268,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:paddingVertical="7dp"
                         app:cardBackgroundColor="#5E5B5B">
 
                         <TextView
