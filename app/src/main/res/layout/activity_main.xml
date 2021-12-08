@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
+            android:fontFamily="@font/alegreya_sc_black_italic"
             android:gravity="center_horizontal"
             android:text="@string/game_name"
             android:textColor="@color/white"
@@ -64,6 +65,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/alegreya_sc_black_italic"
                         android:gravity="center_horizontal"
                         android:text="@string/game_1_name"
                         android:textColor="@color/white"
@@ -118,6 +120,7 @@
                     app:cardBackgroundColor="#5E5B5B">
 
                     <TextView
+                        android:fontFamily="@font/alegreya_sc_black_italic"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -176,6 +179,7 @@
                     app:cardBackgroundColor="#5E5B5B">
 
                     <TextView
+                        android:fontFamily="@font/alegreya_sc_black_italic"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -234,6 +238,7 @@
                     app:cardBackgroundColor="#5E5B5B">
 
                     <TextView
+                        android:fontFamily="@font/alegreya_sc_black_italic"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -292,6 +297,7 @@
                     app:cardBackgroundColor="#5E5B5B">
 
                     <TextView
+                        android:fontFamily="@font/alegreya_sc_black_italic"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
