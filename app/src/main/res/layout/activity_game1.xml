@@ -88,16 +88,51 @@
                 <TextView
                     android:text="1"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+           <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+               <ImageView
+                   android:layout_width="20dp"
+                   android:layout_height="20dp"
+                   android:src="@drawable/star5"/>
+
+               <ImageView
+                   android:layout_width="20dp"
+                   android:layout_height="20dp"
+                   android:src="@drawable/star5"/>
+
+               <ImageView
+                   android:layout_width="20dp"
+                   android:layout_height="20dp"
+                   android:src="@drawable/star5"/>
+
+           </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="visible"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -106,16 +141,51 @@
                 <TextView
                     android:text="2"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="visible"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -124,16 +194,51 @@
                 <TextView
                     android:text="3"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="visible"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -142,16 +247,51 @@
                 <TextView
                     android:text="4"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="visible"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -160,16 +300,52 @@
                 <TextView
                     android:text="5"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    tools:ignore="ExtraText">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_star_border_24"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_star_border_24"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_star_border_24"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="gone"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -178,16 +354,51 @@
                 <TextView
                     android:text="6"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="gone"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -196,16 +407,51 @@
                 <TextView
                     android:text="7"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="gone"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -214,16 +460,51 @@
                 <TextView
                     android:text="8"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="gone"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -232,16 +513,51 @@
                 <TextView
                     android:text="9"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="gone"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -250,16 +566,51 @@
                 <TextView
                     android:text="10"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="gone"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -268,16 +619,104 @@
                 <TextView
                     android:text="11"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="gone"
+                android:weightSum="3"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="12"
+                    android:fontFamily="@font/caesar_dressing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
+            <LinearLayout
+                android:visibility="gone"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -286,41 +725,51 @@
                 <TextView
                     android:text="13"
                     android:fontFamily="@font/caesar_dressing"
-                    style="@style/TextViewInCardGame1"/>
-
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            style="@style/CardStyleGame1">
-            <LinearLayout
-                android:weightSum="3"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:text="13"
-                    android:visibility="gone"
-                    style="@style/TextViewInCardGame1"/>
-
-                <ImageView
-                    android:layout_weight="2"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_baseline_lock_24"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="gone"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -328,23 +777,53 @@
 
                 <TextView
                     android:text="14"
-                    android:visibility="gone"
-                    style="@style/TextViewInCardGame1"/>
-
-                <ImageView
-                    android:layout_weight="2"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_baseline_lock_24"
+                    android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"/>
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+
             style="@style/CardStyleGame1">
+
+            <ImageView
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_lock_24"/>
+
             <LinearLayout
+                android:visibility="gone"
                 android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -352,22 +831,40 @@
 
                 <TextView
                     android:text="15"
-                    android:visibility="gone"
-                    style="@style/TextViewInCardGame1"/>
-
-                <ImageView
-                    android:layout_weight="2"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_baseline_lock_24"
+                    android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"/>
-                <ImageView
-                    style="@style/ImageViewInCardGame1"
-                    android:src="@drawable/stars_not_rated"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star5"/>
+
+                </LinearLayout>
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
-
-
 
     </GridLayout>
 
