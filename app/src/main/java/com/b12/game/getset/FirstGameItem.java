@@ -2,11 +2,16 @@ package com.b12.game.getset;
 
 public class FirstGameItem {
     private int image;
-    private int id;
+    private int imageCount;
 
-    public FirstGameItem(int image, int id) {
+    public FirstGameItem(int image) {
         this.image = image;
-        this.id = id;
+    }
+
+    public FirstGameItem(int image, int imageCount) {
+        this.image = image;
+        this.imageCount = imageCount;
+
     }
 
     public int getImage() {
@@ -15,13 +20,5 @@ public class FirstGameItem {
 
     public void setImage(int image) {
         this.image = image;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }
