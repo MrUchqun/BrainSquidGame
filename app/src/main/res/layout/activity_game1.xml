@@ -7,6 +7,7 @@
     android:id="@+id/game1"
     android:layout_height="match_parent"
     tools:context=".GameActivity1">
+
     <ImageView
         android:id="@+id/seasonBack"
         android:src="@drawable/icon_chevron_back_circle_outline"
@@ -23,7 +24,8 @@
         app:layout_constraintLeft_toRightOf="@id/seasonBack"
         app:layout_constraintRight_toLeftOf="@id/seasonNext"
         android:text="Season One"
-        android:textSize="26sp"
+        android:fontFamily="@font/caesar_dressing"
+        android:textSize="25sp"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -43,6 +45,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="17dp"
         android:text="0 / 45"
+        android:fontFamily="@font/caesar_dressing"
         android:paddingHorizontal="5dp"
         android:drawableStart="@drawable/star5"
         android:drawablePadding="5dp"
@@ -84,6 +87,7 @@
 
                 <TextView
                     android:text="1"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -101,6 +105,7 @@
 
                 <TextView
                     android:text="2"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -118,6 +123,7 @@
 
                 <TextView
                     android:text="3"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -135,6 +141,7 @@
 
                 <TextView
                     android:text="4"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -152,6 +159,7 @@
 
                 <TextView
                     android:text="5"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -169,6 +177,7 @@
 
                 <TextView
                     android:text="6"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -186,6 +195,7 @@
 
                 <TextView
                     android:text="7"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -203,6 +213,7 @@
 
                 <TextView
                     android:text="8"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -220,6 +231,7 @@
 
                 <TextView
                     android:text="9"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -237,6 +249,7 @@
 
                 <TextView
                     android:text="10"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -254,6 +267,7 @@
 
                 <TextView
                     android:text="11"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
@@ -271,6 +285,7 @@
 
                 <TextView
                     android:text="13"
+                    android:fontFamily="@font/caesar_dressing"
                     style="@style/TextViewInCardGame1"/>
 
                 <ImageView
