@@ -80,7 +80,6 @@
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
             <LinearLayout
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -89,17 +88,18 @@
                     android:text="1"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+               android:layout_weight="1"
                 android:orientation="horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:gravity="center_horizontal">
 
                <ImageView
                    android:layout_width="20dp"
@@ -123,17 +123,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="gone"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="visible"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -142,17 +132,18 @@
                     android:text="2"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -176,17 +167,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="gone"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="visible"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -195,17 +176,18 @@
                     android:text="3"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -229,17 +211,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="gone"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="visible"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -248,17 +220,18 @@
                     android:text="4"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -282,17 +255,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="gone"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="visible"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -301,33 +264,33 @@
                     android:text="5"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    tools:ignore="ExtraText">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/ic_baseline_star_border_24"/>
+                        android:src="@drawable/star5"/>
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/ic_baseline_star_border_24"/>
+                        android:src="@drawable/star5"/>
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/ic_baseline_star_border_24"/>
+                        android:src="@drawable/star5"/>
 
                 </LinearLayout>
 
@@ -336,17 +299,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="visible"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="gone"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -355,17 +308,18 @@
                     android:text="6"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -389,17 +343,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="visible"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="gone"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -408,17 +352,18 @@
                     android:text="7"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -442,17 +387,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="visible"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="gone"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -461,17 +396,18 @@
                     android:text="8"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -495,17 +431,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="visible"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="gone"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -514,17 +440,18 @@
                     android:text="9"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -548,17 +475,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="visible"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="gone"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -567,17 +484,18 @@
                     android:text="10"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -601,17 +519,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/CardStyleGame1">
-
-            <ImageView
-                android:visibility="visible"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_lock_24"/>
-
             <LinearLayout
-                android:visibility="gone"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -620,17 +528,18 @@
                     android:text="11"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -656,15 +565,14 @@
             style="@style/CardStyleGame1">
 
             <ImageView
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_baseline_lock_24"/>
 
             <LinearLayout
-                android:visibility="gone"
-                android:weightSum="3"
+                android:visibility="visible"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -673,32 +581,33 @@
                     android:text="12"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/star5"/>
+                        android:src="@drawable/ic_baseline_star_border_24"/>
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/star5"/>
+                        android:src="@drawable/ic_baseline_star_border_24"/>
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/star5"/>
+                        android:src="@drawable/ic_baseline_star_border_24"/>
 
                 </LinearLayout>
 
@@ -717,7 +626,6 @@
 
             <LinearLayout
                 android:visibility="gone"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -726,17 +634,18 @@
                     android:text="13"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -770,7 +679,6 @@
 
             <LinearLayout
                 android:visibility="gone"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -779,17 +687,18 @@
                     android:text="14"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -812,7 +721,6 @@
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
-
             style="@style/CardStyleGame1">
 
             <ImageView
@@ -824,7 +732,6 @@
 
             <LinearLayout
                 android:visibility="gone"
-                android:weightSum="3"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -833,17 +740,18 @@
                     android:text="15"
                     android:fontFamily="@font/caesar_dressing"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center_horizontal">
 
                     <ImageView
                         android:layout_width="20dp"
@@ -865,6 +773,7 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
 
     </GridLayout>
 
