@@ -9,16 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.b12.game.R;
-import com.b12.game.getset.FirstGameItem;
 
 import java.util.ArrayList;
 
 public class FirstGameAdapter extends RecyclerView.Adapter<FirstGameAdapter.FirstGameViewHolder> {
 
-    ArrayList<FirstGameItem> gameItems;
+    ArrayList<Integer> gameItems;
 
 
-    public FirstGameAdapter(ArrayList<FirstGameItem> gameItems) {
+    public FirstGameAdapter(ArrayList<Integer> gameItems) {
         this.gameItems = gameItems;
     }
 
@@ -31,8 +30,8 @@ public class FirstGameAdapter extends RecyclerView.Adapter<FirstGameAdapter.Firs
 
     @Override
     public void onBindViewHolder(@NonNull FirstGameViewHolder holder, int position) {
-        FirstGameItem firstGameItem = gameItems.get(position);
-        holder.rasm.setImageResource(firstGameItem.getImage());
+
+        holder.rasm.setImageResource(gameItems.get(position));
     }
 
     @Override
