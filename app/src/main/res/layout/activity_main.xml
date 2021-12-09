@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:layout_marginBottom="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -16,26 +17,25 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <pl.droidsonroids.gif.GifImageView
+        <ImageView
             android:id="@+id/help_icon"
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:layout_weight="1"
             android:contentDescription="@string/game_iconic_picture"
-            android:src="@drawable/brain_image_three"/>
+            android:src="@drawable/brain_image_two"/>
 
         <TextView
             android:id="@+id/brain_suid_game_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:fontFamily="@font/alegreya_sc_black_italic"
+            android:fontFamily="@font/caesar_dressing"
             android:gravity="center_horizontal"
             android:text="@string/game_name"
             android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textSize="40sp"
+            android:textStyle="bold"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/play_game_1"
@@ -58,14 +58,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    app:cardBackgroundColor="#5E5B5B">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:gravity="center_horizontal"
                         android:text="@string/game_1_name"
                         android:textColor="@color/white"
@@ -78,8 +77,6 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:orientation="horizontal"
-                    android:weightSum="4"
-                    app:cardBackgroundColor="#5E5B5B"
                     tools:ignore="RtlHardcoded">
 
                     <ImageView
@@ -116,11 +113,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    app:cardBackgroundColor="#5E5B5B">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -136,9 +132,6 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:orientation="horizontal"
-                    android:paddingVertical="7dp"
-                    android:weightSum="4"
-                    app:cardBackgroundColor="#5E5B5B"
                     tools:ignore="RtlHardcoded">
 
                     <ImageView
@@ -175,11 +168,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    app:cardBackgroundColor="#5E5B5B">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -195,9 +187,6 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:orientation="horizontal"
-                    android:paddingVertical="7dp"
-                    android:weightSum="4"
-                    app:cardBackgroundColor="#5E5B5B"
                     tools:ignore="RtlHardcoded">
 
                     <ImageView
@@ -227,10 +216,6 @@
             app:cardBackgroundColor="@color/button_color"
             app:cardCornerRadius="30dp">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -238,7 +223,7 @@
                     app:cardBackgroundColor="#5E5B5B">
 
                     <TextView
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -248,27 +233,6 @@
                         android:textSize="24sp" />
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    android:paddingVertical="7dp"
-                    android:weightSum="4"
-                    app:cardBackgroundColor="#5E5B5B"
-                    tools:ignore="RtlHardcoded">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="15dp"
-                        android:contentDescription="@string/iconic_play"
-                        android:src="@drawable/ic_baseline_play_circle_outline_24" />
-
-                </LinearLayout>
-            </FrameLayout>
-
 
         </androidx.cardview.widget.CardView>
 
@@ -286,18 +250,13 @@
             app:cardBackgroundColor="@color/button_color"
             app:cardCornerRadius="30dp">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    app:cardBackgroundColor="#5E5B5B">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -308,25 +267,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    android:paddingVertical="7dp"
-                    android:weightSum="4"
-                    app:cardBackgroundColor="#5E5B5B"
-                    tools:ignore="RtlHardcoded">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="15dp"
-                        android:contentDescription="@string/iconic_play"
-                        android:src="@drawable/ic_baseline_play_circle_outline_24" />
-
-                </LinearLayout>
-            </FrameLayout>
 
         </androidx.cardview.widget.CardView>
 
