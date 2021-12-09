@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
+        <pl.droidsonroids.gif.GifImageView
             android:id="@+id/help_icon"
             android:layout_width="match_parent"
             android:layout_height="130dp"
