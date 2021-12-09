@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <pl.droidsonroids.gif.GifImageView
+        <ImageView
             android:id="@+id/help_icon"
             android:layout_width="match_parent"
             android:layout_height="130dp"
@@ -30,12 +30,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/alegreya_sc_black_italic"
+            android:fontFamily="@font/caesar_dressing"
             android:gravity="center_horizontal"
             android:text="@string/game_name"
             android:textColor="@color/white"
             android:textSize="40sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/play_game_1"
@@ -64,7 +64,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:gravity="center_horizontal"
                         android:text="@string/game_1_name"
                         android:textColor="@color/white"
@@ -116,7 +116,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -171,7 +171,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -223,7 +223,7 @@
                     app:cardBackgroundColor="#5E5B5B">
 
                     <TextView
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -256,7 +256,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:fontFamily="@font/alegreya_sc_black_italic"
+                        android:fontFamily="@font/caesar_dressing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
