@@ -1,24 +1,31 @@
 package com.b12.game.adapters;
 
+import android.annotation.SuppressLint;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.b12.game.R;
+import com.b12.game.getset.FirstGameItem;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class FirstGameItemCountAdapter extends RecyclerView.Adapter<FirstGameItemCountAdapter.FirstGameItemCountViewHolder> {
 
-    HashMap<Integer, Integer> hashMap;
+    ArrayList<FirstGameItem> list;
+    OnAnswerClickListener onAnswerClickListener;
 
-    public FirstGameItemCountAdapter(HashMap<Integer, Integer> hashMap) {
-        this.hashMap = hashMap;
+    public FirstGameItemCountAdapter(ArrayList<FirstGameItem> list, OnAnswerClickListener onAnswerClickListener) {
+        this.list = list;
+        this.onAnswerClickListener = onAnswerClickListener;
     }
 
     @NonNull
@@ -28,14 +35,24 @@ public class FirstGameItemCountAdapter extends RecyclerView.Adapter<FirstGameIte
         return new FirstGameItemCountViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(@NonNull FirstGameItemCountViewHolder holder, int position) {
-        holder.textView.setText(hashMap.get(position));
+        Collections.shuffle(list);
+        FirstGameItem item = list.get(position);
+        holder.textView.setText(Integer.toString(item.getImageCount()));
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onAnswerClickListener.onAnswerClicked(item.getImageCount());
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return hashMap.size();
+        return list.size();
     }
 
     public class FirstGameItemCountViewHolder extends RecyclerView.ViewHolder {
@@ -47,5 +64,9 @@ public class FirstGameItemCountAdapter extends RecyclerView.Adapter<FirstGameIte
             cardView = itemView.findViewById(R.id.first_game_answer_card);
             textView = itemView.findViewById(R.id.first_game_answer_txt);
         }
+    }
+
+    public interface OnAnswerClickListener {
+        void onAnswerClicked(int answer);
     }
 }

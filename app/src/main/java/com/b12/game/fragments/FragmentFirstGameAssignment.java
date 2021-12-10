@@ -22,29 +22,28 @@ import com.b12.game.R;
 import com.b12.game.SplashActivity;
 import com.b12.game.adapters.FirstGameAdapter;
 import com.b12.game.adapters.FirstGameItemCountAdapter;
+import com.b12.game.getset.FirstGameItem;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class FragmentFirstGameAssignment extends Fragment {
+public class FragmentFirstGameAssignment extends Fragment implements FirstGameItemCountAdapter.OnAnswerClickListener {
     private FirstGameAdapter firstGameAdapter;
     private FirstGameItemCountAdapter firstGameItemCountAdapter;
     private ArrayList<Integer> gameItems;
     private ArrayList<Integer> tempItems;
-    private ArrayList<Integer> list;
+    private ArrayList<FirstGameItem> answersList;
     private RecyclerView recyclerViewImages, recyclerViewCount;
     private ProgressBar progressBar;
     private RelativeLayout relativeLayout;
     private TextView levelTxt, circler_progress_txt;
-    private HashMap<Integer, Integer> hashMap;
     private ImageView imageViewInCard;
     private ProgressBar progressBarHorizontal;
     private final Random rnd = new Random();
-    int counter = 0;
+    int counter = 0, itemCount = 0;
+    int countRandom, randomItem;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -54,16 +53,13 @@ public class FragmentFirstGameAssignment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_first_game_assignment, container, false);
         SplashActivity splashActivity = new SplashActivity();
         splashActivity.changeStatusBarColor(getActivity());
-        list = new ArrayList<>();
-        hashMap = new HashMap<>();
+        answersList = new ArrayList<>();
         tempItems = new ArrayList<>();
         gameItems = new ArrayList<>();
-        hashMap.put(R.drawable.img_2, 2);
         tempItems.add(R.drawable.img_1);
         tempItems.add(R.drawable.img_2);
         tempItems.add(R.drawable.img_3);
         tempItems.add(R.drawable.img_4);
-        list = new ArrayList<>();
         circler_progress_txt = view.findViewById(R.id.progress_circular_text);
         progressBarHorizontal = view.findViewById(R.id.horizontal_progress_bar);
         recyclerViewImages = view.findViewById(R.id.first_game_recycler);
@@ -74,6 +70,9 @@ public class FragmentFirstGameAssignment extends Fragment {
         relativeLayout = view.findViewById(R.id.first_game_answer_relative_layout);
         progressBarHorizontal.setVisibility(View.GONE);
         imageViewInCard.setVisibility(View.GONE);
+
+        countRandom = rnd.nextInt(4);
+        randomItem = tempItems.get(countRandom);
         countDownTimer();
 
 
@@ -83,23 +82,17 @@ public class FragmentFirstGameAssignment extends Fragment {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     private void generateImage() {
         for (int i = 0; i < 11; i++) {
             int value = rnd.nextInt(4);
             gameItems.add(tempItems.get(value));
 
         }
-//        for (int item : tempItems) {
-//            hashMap.put(item, hashMap.getOrDefault(item, 0) + 1);
-//        }
-        recyclerViewCount.setHasFixedSize(true);
-        recyclerViewCount.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        recyclerViewCount.setItemAnimator(null);
-        firstGameItemCountAdapter = new FirstGameItemCountAdapter(hashMap);
-        recyclerViewCount.setAdapter(firstGameItemCountAdapter);
-        int val = rnd.nextInt(tempItems.size());
-        imageViewInCard.setImageResource(tempItems.get(val));
+        for (int i = 0; i < gameItems.size() - 1; i++) {
+            if (gameItems.get(i).equals(randomItem)) {
+                itemCount++;
+            }
+        }
         recyclerViewImages.setHasFixedSize(true);
         recyclerViewImages.setLayoutManager(new GridLayoutManager(getContext(), 4));
         recyclerViewImages.setItemAnimator(null);
@@ -112,6 +105,7 @@ public class FragmentFirstGameAssignment extends Fragment {
     private void countDownTimer() {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
                 if (counter <= 10) {
@@ -127,7 +121,7 @@ public class FragmentFirstGameAssignment extends Fragment {
                     progressBarHorizontal.setVisibility(View.VISIBLE);
                     imageViewInCard.setVisibility(View.VISIBLE);
                     recyclerViewCount.setVisibility(View.VISIBLE);
-                    relativeLayout.setVisibility(View.VISIBLE);
+
                     progressBarHorizontalTimer();
                     getRandomImageFromArray();
                 }
@@ -151,9 +145,52 @@ public class FragmentFirstGameAssignment extends Fragment {
         timer.schedule(timerTask, 0, 100);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void getRandomImageFromArray() {
+        int value1 = rnd.nextInt(7);
+        int value2 = rnd.nextInt(7);
+        int value3 = rnd.nextInt(7);
+        if (value1 == 0 || value2 == 0 || value3 == 0) {
+            value1 += 1;
+            value2 += 1;
+            value3 += 1;
+        }
+        if (value1 == value2 || value1 == value3) {
+            value1 += 1
+            ;
+        }
+        if (value2 == value1 || value2 == value3) {
+            value2 += 1;
+        }
+        if (value3 == value2 || value3 == value1) {
+            value3 += 1;
+        }
+        answersList.add(new FirstGameItem(itemCount));
+        answersList.add(new FirstGameItem(value1));
+        answersList.add(new FirstGameItem(value2));
+        answersList.add(new FirstGameItem(value3));
+
+
+        imageViewInCard.setImageResource(randomItem);
+
+        relativeLayout.setVisibility(View.VISIBLE);
+        recyclerViewCount.setHasFixedSize(true);
+        recyclerViewCount.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        recyclerViewCount.setItemAnimator(null);
+        firstGameItemCountAdapter = new FirstGameItemCountAdapter(answersList, this);
+        recyclerViewCount.setAdapter(firstGameItemCountAdapter);
 
 
     }
 
+    @Override
+    public void onAnswerClicked(int answer) {
+checkAnswer(answer);
+    }
+
+    private void checkAnswer(int answer) {
+    if (answer==itemCount){
+
+    }
+    }
 }

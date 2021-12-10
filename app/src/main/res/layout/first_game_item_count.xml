@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_centerHorizontal="true"
     android:id="@+id/first_game_answer_card"
-    android:layout_width="0dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
     android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="5dp"
     android:layout_weight="1"
     app:cardBackgroundColor="@color/pale_red"
     app:cardCornerRadius="18dp">
@@ -14,6 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="10dp"
         android:fontFamily="@font/open_sans_semibold"
         android:text="0"
