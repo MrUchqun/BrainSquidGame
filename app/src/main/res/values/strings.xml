@@ -8,4 +8,8 @@
     <string name="settings">Settings</string>
     <string name="about_us">About Us</string>
     <string name="iconic_play">Play picture iconic</string>
+    <string name="level_complete">Complete</string>
+    <string name="string_congratulations">Congratulations</string>
+    <string name="string_failed">Failed</string>
+    <string name="string_level_failed">Level failed</string>
 </resources>
