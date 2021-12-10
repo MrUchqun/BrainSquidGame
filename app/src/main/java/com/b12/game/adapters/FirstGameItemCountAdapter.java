@@ -1,14 +1,14 @@
 package com.b12.game.adapters;
 
 import android.annotation.SuppressLint;
-import android.os.Build;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,17 +35,17 @@ public class FirstGameItemCountAdapter extends RecyclerView.Adapter<FirstGameIte
         return new FirstGameItemCountViewHolder(view);
     }
 
-    @SuppressLint("SetTextI18n")
-    @RequiresApi(api = Build.VERSION_CODES.N)
+    @SuppressLint({"SetTextI18n", "ResourceAsColor"})
     @Override
     public void onBindViewHolder(@NonNull FirstGameItemCountViewHolder holder, int position) {
         Collections.shuffle(list);
         FirstGameItem item = list.get(position);
+        holder.layout.setBackgroundColor(Color.parseColor("#FFB6B6"));
         holder.textView.setText(Integer.toString(item.getImageCount()));
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onAnswerClickListener.onAnswerClicked(item.getImageCount());
+                onAnswerClickListener.onAnswerClicked(item.getImageCount(), holder.layout);
             }
         });
     }
@@ -58,15 +58,17 @@ public class FirstGameItemCountAdapter extends RecyclerView.Adapter<FirstGameIte
     public class FirstGameItemCountViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
         TextView textView;
+        LinearLayout layout;
 
         public FirstGameItemCountViewHolder(@NonNull View itemView) {
             super(itemView);
+            layout = itemView.findViewById(R.id.first_game_answer_layout);
             cardView = itemView.findViewById(R.id.first_game_answer_card);
             textView = itemView.findViewById(R.id.first_game_answer_txt);
         }
     }
 
     public interface OnAnswerClickListener {
-        void onAnswerClicked(int answer);
+        void onAnswerClicked(int answer, LinearLayout layout);
     }
 }

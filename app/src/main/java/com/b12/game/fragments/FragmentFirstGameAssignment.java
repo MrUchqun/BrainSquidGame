@@ -1,5 +1,7 @@
 package com.b12.game.fragments;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -16,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -118,7 +122,6 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                     circler_progress_txt.setVisibility(View.GONE);
                     progressBarHorizontal.setVisibility(View.VISIBLE);
                     imageViewInCard.setVisibility(View.VISIBLE);
-                    cardView.setCardBackgroundColor(R.drawable.icons_background);
                     recyclerViewCount.setVisibility(View.VISIBLE);
 
                     progressBarHorizontalTimer();
@@ -169,7 +172,12 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 //            answersList.add(new FirstGameItem(list.get(i)));
 //        }
 
-
+        final int sdk = android.os.Build.VERSION.SDK_INT;
+        if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            imageViewInCard.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icons_background));
+        } else {
+            imageViewInCard.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.icons_background));
+        }
         imageViewInCard.setImageResource(randomItem);
 
         relativeLayout.setVisibility(View.VISIBLE);
@@ -183,16 +191,20 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     }
 
     @Override
-    public void onAnswerClicked(int answer) {
-        checkAnswer(answer);
+    public void onAnswerClicked(int answer, LinearLayout layout) {
+        checkAnswer(answer, layout);
     }
 
-    private void checkAnswer(int answer) {
+    @SuppressLint("ResourceAsColor")
+    private void checkAnswer(int answer, LinearLayout layout) {
         if (answer == itemCount) {
+            layout.setBackgroundColor(Color.parseColor("#4ECB71"));
             imageViewInCard.setImageResource(R.drawable.succesfull_img);
             playSuccesSound();
             nextLevel();
         } else {
+            layout.setBackgroundColor(Color.parseColor("#F24E1E"));
+            imageViewInCard.setImageResource(R.drawable.wrong_img);
             playWrongSound();
             nextLevel();
         }
