@@ -27,7 +27,6 @@ import com.b12.game.adapters.FirstGameItemCountAdapter;
 import com.b12.game.getset.FirstGameItem;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -191,16 +190,24 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private void checkAnswer(int answer) {
         if (answer == itemCount) {
             imageViewInCard.setImageResource(R.drawable.succesfull_img);
-            playSound();
+            playSuccesSound();
+            nextLevel();
+        } else {
+            playWrongSound();
             nextLevel();
         }
+    }
+
+    private void playWrongSound() {
+        final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.wrong_sound);
+        mp.start();
     }
 
     private void nextLevel() {
 
     }
 
-    private void playSound() {
+    private void playSuccesSound() {
         final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.succesfully_sound);
         mp.start();
     }
