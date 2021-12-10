@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.b12.game.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FirstGameAdapter extends RecyclerView.Adapter<FirstGameAdapter.FirstGameViewHolder> {
 
@@ -30,7 +31,7 @@ public class FirstGameAdapter extends RecyclerView.Adapter<FirstGameAdapter.Firs
 
     @Override
     public void onBindViewHolder(@NonNull FirstGameViewHolder holder, int position) {
-
+        Collections.shuffle(gameItems);
         holder.rasm.setImageResource(gameItems.get(position));
     }
 
@@ -41,6 +42,7 @@ public class FirstGameAdapter extends RecyclerView.Adapter<FirstGameAdapter.Firs
 
     public class FirstGameViewHolder extends RecyclerView.ViewHolder {
         ImageView rasm;
+
         public FirstGameViewHolder(@NonNull View itemView) {
             super(itemView);
             rasm = itemView.findViewById(R.id.first_game_img);

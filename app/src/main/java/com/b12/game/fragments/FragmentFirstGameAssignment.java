@@ -1,5 +1,6 @@
 package com.b12.game.fragments;
 
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +27,7 @@ import com.b12.game.adapters.FirstGameItemCountAdapter;
 import com.b12.game.getset.FirstGameItem;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -41,6 +44,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private TextView levelTxt, circler_progress_txt;
     private ImageView imageViewInCard;
     private ProgressBar progressBarHorizontal;
+    private CardView cardView;
     private final Random rnd = new Random();
     int counter = 0, itemCount = 0;
     int countRandom, randomItem;
@@ -60,6 +64,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         tempItems.add(R.drawable.img_2);
         tempItems.add(R.drawable.img_3);
         tempItems.add(R.drawable.img_4);
+        cardView = view.findViewById(R.id.first_game_assignment_image_view_card);
         circler_progress_txt = view.findViewById(R.id.progress_circular_text);
         progressBarHorizontal = view.findViewById(R.id.horizontal_progress_bar);
         recyclerViewImages = view.findViewById(R.id.first_game_recycler);
@@ -70,9 +75,8 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         relativeLayout = view.findViewById(R.id.first_game_answer_relative_layout);
         progressBarHorizontal.setVisibility(View.GONE);
         imageViewInCard.setVisibility(View.GONE);
+//        cardView.setCardBackgroundColor(Color.WHITE);
 
-        countRandom = rnd.nextInt(4);
-        randomItem = tempItems.get(countRandom);
         countDownTimer();
 
 
@@ -88,9 +92,11 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
             gameItems.add(tempItems.get(value));
 
         }
-        for (int i = 0; i < gameItems.size() - 1; i++) {
+        countRandom = rnd.nextInt(4);
+        randomItem = gameItems.get(0);
+        for (int i = 0; i < gameItems.size(); i++) {
             if (gameItems.get(i).equals(randomItem)) {
-                itemCount++;
+                itemCount = itemCount + 1;
             }
         }
         recyclerViewImages.setHasFixedSize(true);
@@ -120,6 +126,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                     circler_progress_txt.setVisibility(View.GONE);
                     progressBarHorizontal.setVisibility(View.VISIBLE);
                     imageViewInCard.setVisibility(View.VISIBLE);
+                    cardView.setCardBackgroundColor(R.drawable.icons_background);
                     recyclerViewCount.setVisibility(View.VISIBLE);
 
                     progressBarHorizontalTimer();
@@ -147,28 +154,21 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void getRandomImageFromArray() {
-        int value1 = rnd.nextInt(7);
-        int value2 = rnd.nextInt(7);
-        int value3 = rnd.nextInt(7);
-        if (value1 == 0 || value2 == 0 || value3 == 0) {
-            value1 += 1;
-            value2 += 1;
-            value3 += 1;
-        }
-        if (value1 == value2 || value1 == value3) {
-            value1 += 1
-            ;
-        }
-        if (value2 == value1 || value2 == value3) {
-            value2 += 1;
-        }
-        if (value3 == value2 || value3 == value1) {
-            value3 += 1;
-        }
         answersList.add(new FirstGameItem(itemCount));
-        answersList.add(new FirstGameItem(value1));
-        answersList.add(new FirstGameItem(value2));
-        answersList.add(new FirstGameItem(value3));
+        answersList.add(new FirstGameItem(1));
+        answersList.add(new FirstGameItem(2));
+        answersList.add(new FirstGameItem(3));
+//        ArrayList<Integer> list = new ArrayList<Integer>();
+//        for (int i = 1; i < 10; i++) {
+//            list.add(i);
+//        }
+//        Collections.shuffle(list);
+//        for (int i = 0; i < 3; i++) {
+//            if (list.get(i).equals(itemCount)) {
+//                list.get(i + 1);
+//            }
+//            answersList.add(new FirstGameItem(list.get(i)));
+//        }
 
 
         imageViewInCard.setImageResource(randomItem);
@@ -185,12 +185,23 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
     @Override
     public void onAnswerClicked(int answer) {
-checkAnswer(answer);
+        checkAnswer(answer);
     }
 
     private void checkAnswer(int answer) {
-    if (answer==itemCount){
+        if (answer == itemCount) {
+            imageViewInCard.setImageResource(R.drawable.succesfull_img);
+            playSound();
+            nextLevel();
+        }
+    }
+
+    private void nextLevel() {
 
     }
+
+    private void playSound() {
+        final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.succesfully_sound);
+        mp.start();
     }
 }
