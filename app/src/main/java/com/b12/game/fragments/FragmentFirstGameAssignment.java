@@ -92,13 +92,6 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
             gameItems.add(tempItems.get(value));
 
         }
-        countRandom = rnd.nextInt(4);
-        randomItem = gameItems.get(0);
-        for (int i = 0; i < gameItems.size(); i++) {
-            if (gameItems.get(i).equals(randomItem)) {
-                itemCount = itemCount + 1;
-            }
-        }
         recyclerViewImages.setHasFixedSize(true);
         recyclerViewImages.setLayoutManager(new GridLayoutManager(getContext(), 4));
         recyclerViewImages.setItemAnimator(null);
@@ -154,10 +147,17 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void getRandomImageFromArray() {
+
+        randomItem = gameItems.get(0);
+        for (int i = 0; i < gameItems.size(); i++) {
+            if (gameItems.get(i).equals(randomItem)) {
+                itemCount = itemCount + 1;
+            }
+        }
         answersList.add(new FirstGameItem(itemCount));
-        answersList.add(new FirstGameItem(1));
-        answersList.add(new FirstGameItem(2));
-        answersList.add(new FirstGameItem(3));
+//        answersList.add(new FirstGameItem(1));
+//        answersList.add(new FirstGameItem(2));
+//        answersList.add(new FirstGameItem(3));
 //        ArrayList<Integer> list = new ArrayList<Integer>();
 //        for (int i = 1; i < 10; i++) {
 //            list.add(i);

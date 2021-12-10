@@ -31,7 +31,6 @@ public class FirstGameAdapter extends RecyclerView.Adapter<FirstGameAdapter.Firs
 
     @Override
     public void onBindViewHolder(@NonNull FirstGameViewHolder holder, int position) {
-        Collections.shuffle(gameItems);
         holder.rasm.setImageResource(gameItems.get(position));
     }
 
