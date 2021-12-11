@@ -45,13 +45,13 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private RecyclerView recyclerViewImages, recyclerViewCount;
     private ProgressBar progressBar;
     private RelativeLayout relativeLayout;
-    private TextView levelTxt, circler_progress_txt;
+    private TextView levelTxt, circler_progress_txt, levelInLevel;
     private ImageView imageViewInCard;
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
     private final Random rnd = new Random();
     int counter = 0, itemCount = 0;
-    int countRandom, randomItem;
+    int levelCount, randomItem;
     private final Handler handler = new Handler();
 
 
@@ -78,9 +78,10 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         recyclerViewCount = view.findViewById(R.id.first_game_item_count_recycler);
         imageViewInCard = view.findViewById(R.id.first_game_card_image);
         levelTxt = view.findViewById(R.id.first_game_level_txt);
+        levelInLevel = view.findViewById(R.id.first_game_level_in_level_txt);
         progressBar = view.findViewById(R.id.progress_circular);
         relativeLayout = view.findViewById(R.id.first_game_answer_relative_layout);
-        levelTxt.setText("Level"+levelTxtBundle);
+        levelTxt.setText("Level " + levelTxtBundle);
         progressBarHorizontal.setVisibility(View.GONE);
         imageViewInCard.setVisibility(View.GONE);
 //        cardView.setCardBackgroundColor(Color.WHITE);
