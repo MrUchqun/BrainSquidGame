@@ -91,17 +91,15 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
 
     @Override
     public void onLevelClicked(String level) {
-        Bundle bundle = new Bundle();
-        bundle.putString("Level", level);
+        SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+        editorLevelNumber.putString("levelnum", level);
+        editorLevelNumber.putInt("levelCount", 1);
+        editorLevelNumber.apply();
         linearLayout.setVisibility(View.GONE);
         Fragment someFragment = new FragmentFirstGameAssignment();
-        someFragment.setArguments(bundle);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.game1_linear1, someFragment); // give your fragment container id in first parameter
-        transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
         transaction.commit();
-
-
     }
 
     @Override

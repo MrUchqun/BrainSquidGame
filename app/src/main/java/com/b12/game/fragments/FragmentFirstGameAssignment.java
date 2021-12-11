@@ -1,6 +1,10 @@
 package com.b12.game.fragments;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -21,9 +25,11 @@ import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.b12.game.LevelCompeletActivity;
 import com.b12.game.R;
 import com.b12.game.SplashActivity;
 import com.b12.game.adapters.FirstGameAdapter;
@@ -50,10 +56,11 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
     private final Random rnd = new Random();
-    int counter = 0, itemCount = 0;
-    int levelCount, randomItem;
+    private int counter = 0, itemCount = 0;
+    private int levelCount, randomItem;
     private final Handler handler = new Handler();
-
+    private String levelTxtBundle;
+    private SharedPreferences sharedPreferences;
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -63,7 +70,9 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         View view = inflater.inflate(R.layout.fragment_first_game_assignment, container, false);
         SplashActivity splashActivity = new SplashActivity();
         splashActivity.changeStatusBarColor(getActivity());
-        String levelTxtBundle = getArguments().getString("Level");
+        sharedPreferences = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE);
+        levelTxtBundle = sharedPreferences.getString("levelnum", "");
+        levelCount = sharedPreferences.getInt("levelCount", 0);
         answersList = new ArrayList<>();
         tempItems = new ArrayList<>();
         gameItems = new ArrayList<>();
@@ -82,6 +91,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         progressBar = view.findViewById(R.id.progress_circular);
         relativeLayout = view.findViewById(R.id.first_game_answer_relative_layout);
         levelTxt.setText("Level " + levelTxtBundle);
+        levelInLevel.setText(levelCount + "/" + levelTxtBundle);
         progressBarHorizontal.setVisibility(View.GONE);
         imageViewInCard.setVisibility(View.GONE);
 //        cardView.setCardBackgroundColor(Color.WHITE);
@@ -164,7 +174,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         answersList.add(new FirstGameItem(itemCount));
         while (answersList.size() < 4) {
             int random = rnd.nextInt(5) + 1;
-            if (!answersList.contains(random))
+            if (!answersList.contains(new FirstGameItem(random)))
                 answersList.add(new FirstGameItem(random));
         }
         Collections.shuffle(answersList);
@@ -212,6 +222,19 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     }
 
     private void nextLevel() {
+        if (levelCount < Integer.parseInt(levelTxtBundle)) {
+            SharedPreferences.Editor editorLevelNumber = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+            editorLevelNumber.putInt("levelCount", levelCount + 1);
+            editorLevelNumber.apply();
+            Fragment someFragment = new FragmentFirstGameAssignment();
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.game1_linear1, someFragment);
+            transaction.commit();
+        } else {
+            Intent intent = new Intent(getContext(), LevelCompeletActivity.class);
+            startActivity(intent);
+        }
+
 
     }
 

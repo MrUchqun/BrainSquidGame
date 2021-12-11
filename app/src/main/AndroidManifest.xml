@@ -13,6 +13,9 @@
             android:name=".GameActivity1"
             android:exported="true" />
         <activity
+            android:name=".LevelCompeletActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
