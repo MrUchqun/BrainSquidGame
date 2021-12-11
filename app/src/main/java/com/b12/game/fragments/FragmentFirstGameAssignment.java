@@ -31,6 +31,7 @@ import com.b12.game.adapters.FirstGameItemCountAdapter;
 import com.b12.game.getset.FirstGameItem;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -166,7 +167,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
             if (!answersList.contains(random))
                 answersList.add(new FirstGameItem(random));
         }
-
+        Collections.shuffle(answersList);
         final int sdk = android.os.Build.VERSION.SDK_INT;
         if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
             imageViewInCard.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icons_background));

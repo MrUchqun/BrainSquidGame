@@ -38,7 +38,6 @@ public class FirstGameItemCountAdapter extends RecyclerView.Adapter<FirstGameIte
     @SuppressLint({"SetTextI18n", "ResourceAsColor"})
     @Override
     public void onBindViewHolder(@NonNull FirstGameItemCountViewHolder holder, int position) {
-        Collections.shuffle(list);
         FirstGameItem item = list.get(position);
         holder.layout.setBackgroundColor(Color.parseColor("#FFB6B6"));
         holder.textView.setText(Integer.toString(item.getImageCount()));
