@@ -1,4 +1,4 @@
-package com.b12.game;
+package com.b12.game.activities;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -10,6 +10,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.b12.game.R;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {

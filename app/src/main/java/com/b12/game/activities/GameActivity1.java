@@ -1,4 +1,4 @@
-package com.b12.game;
+package com.b12.game.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.b12.game.R;
 import com.b12.game.adapters.FirstGameLevelsAdapter;
 import com.b12.game.fragments.FragmentFirstGameAssignment;
 import com.b12.game.getset.Level;

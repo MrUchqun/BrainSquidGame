@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Game">
         <activity
-            android:name=".GameActivity1"
+            android:name=".activities.GameActivity1"
+            android:exported="true" />
+        <activity
+            android:name=".activities.SecondGameActivity"
             android:exported="true" />
         <activity
             android:name=".LevelCompeletActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

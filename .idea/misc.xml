@@ -4,7 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Development/Game/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2203125" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/drawable/ic_baseline_refresh_black_24.xml" value="0.2037037037037037" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/drawable/ic_baseline_timer_24.xml" value="0.2037037037037037" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/drawable/ic_baseline_touch_app_24.xml" value="0.2037037037037037" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/drawable/main_shape_1.xml" value="0.2037037037037037" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/drawable/shape_white_border.xml" value="0.2037037037037037" />
         <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_game1.xml" value="0.25" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_second_game.xml" value="0.19701086956521738" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.1" />
         <entry key="..\:/Android Development/SquidGame/app/src/main/res/drawable/ic_baseline_play_circle_outline_24.xml" value="0.2074074074074074" />
         <entry key="..\:/Android Development/SquidGame/app/src/main/res/layout/activity_game1.xml" value="0.17192982456140352" />
         <entry key="..\:/Android Development/SquidGame/app/src/main/res/layout/activity_main.xml" value="0.1703125" />

@@ -31,7 +31,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.b12.game.LevelCompeletActivity;
 import com.b12.game.R;
-import com.b12.game.SplashActivity;
+import com.b12.game.activities.SplashActivity;
 import com.b12.game.adapters.FirstGameAdapter;
 import com.b12.game.adapters.FirstGameItemCountAdapter;
 import com.b12.game.getset.FirstGameItem;

@@ -1,4 +1,4 @@
-package com.b12.game;
+package com.b12.game.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import com.b12.game.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.play_game_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this, SecondGameActivity.class);
+                startActivity(intent1);
+            }
+        });
 
     }
 }
