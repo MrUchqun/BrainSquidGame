@@ -54,6 +54,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private final Handler handler = new Handler();
 
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Nullable
     @Override
@@ -61,6 +62,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         View view = inflater.inflate(R.layout.fragment_first_game_assignment, container, false);
         SplashActivity splashActivity = new SplashActivity();
         splashActivity.changeStatusBarColor(getActivity());
+        String levelTxtBundle = getArguments().getString("Level");
         answersList = new ArrayList<>();
         tempItems = new ArrayList<>();
         gameItems = new ArrayList<>();
@@ -77,6 +79,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         levelTxt = view.findViewById(R.id.first_game_level_txt);
         progressBar = view.findViewById(R.id.progress_circular);
         relativeLayout = view.findViewById(R.id.first_game_answer_relative_layout);
+        levelTxt.setText("Level"+levelTxtBundle);
         progressBarHorizontal.setVisibility(View.GONE);
         imageViewInCard.setVisibility(View.GONE);
 //        cardView.setCardBackgroundColor(Color.WHITE);
@@ -94,7 +97,6 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         for (int i = 0; i < 11; i++) {
             int value = rnd.nextInt(4);
             gameItems.add(tempItems.get(value));
-
         }
         recyclerViewImages.setHasFixedSize(true);
         recyclerViewImages.setLayoutManager(new GridLayoutManager(getContext(), 4));

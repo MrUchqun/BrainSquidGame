@@ -30,6 +30,8 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game1);
+        SplashActivity splashActivity = new SplashActivity();
+        splashActivity.changeStatusBarColor(this);
         linearLayout = findViewById(R.id.game1_linear2);
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         boolean firstStart = prefs.getBoolean("firstStart", true);
@@ -70,8 +72,12 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
 
         for (int i = 1; i <= 15; i++) {
             editorStars.putInt(Integer.toString(i), R.drawable.stars_0);
-            editorStatus.putBoolean(Integer.toString(i), false);
+            if (i > 3) {
+                editorStatus.putBoolean(Integer.toString(i), false);
+            }
+
         }
+
         editorStars.apply();
         editorStatus.apply();
     }
@@ -85,8 +91,11 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
 
     @Override
     public void onLevelClicked(String level) {
+        Bundle bundle = new Bundle();
+        bundle.putString("Level", level);
         linearLayout.setVisibility(View.GONE);
         Fragment someFragment = new FragmentFirstGameAssignment();
+        someFragment.setArguments(bundle);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.game1_linear1, someFragment); // give your fragment container id in first parameter
         transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
