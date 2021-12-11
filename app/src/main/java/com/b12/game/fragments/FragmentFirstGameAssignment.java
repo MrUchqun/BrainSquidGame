@@ -156,21 +156,14 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                 itemCount = itemCount + 1;
             }
         }
+
+        Random rnd = new Random();
         answersList.add(new FirstGameItem(itemCount));
-//        answersList.add(new FirstGameItem(1));
-//        answersList.add(new FirstGameItem(2));
-//        answersList.add(new FirstGameItem(3));
-//        ArrayList<Integer> list = new ArrayList<Integer>();
-//        for (int i = 1; i < 10; i++) {
-//            list.add(i);
-//        }
-//        Collections.shuffle(list);
-//        for (int i = 0; i < 3; i++) {
-//            if (list.get(i).equals(itemCount)) {
-//                list.get(i + 1);
-//            }
-//            answersList.add(new FirstGameItem(list.get(i)));
-//        }
+        while (answersList.size() < 4) {
+            int random = rnd.nextInt(5) + 1;
+            if (!answersList.contains(random))
+                answersList.add(new FirstGameItem(random));
+        }
 
         final int sdk = android.os.Build.VERSION.SDK_INT;
         if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
