@@ -51,6 +51,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private final Random rnd = new Random();
     int counter = 0, itemCount = 0;
     int countRandom, randomItem;
+    private final Handler handler = new Handler();
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -105,7 +106,6 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     }
 
     private void countDownTimer() {
-        final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
@@ -223,4 +223,11 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.succesfully_sound);
         mp.start();
     }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        handler.removeCallbacksAndMessages(null);
+    }
+
 }

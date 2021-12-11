@@ -20,10 +20,12 @@ import java.util.ArrayList;
 public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevelsAdapter.FirstGameLevelsViewHolder> {
     ArrayList<Level> list;
     Context context;
+    OnLevelClickListener onLevelClickListener;
 
-    public FirstGameLevelsAdapter(ArrayList<Level> list, Context context) {
+    public FirstGameLevelsAdapter(ArrayList<Level> list, Context context, OnLevelClickListener onLevelClickListener) {
         this.list = list;
         this.context = context;
+        this.onLevelClickListener = onLevelClickListener;
     }
 
     @NonNull
@@ -38,6 +40,12 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
         Level level = list.get(position);
         holder.textView.setText(level.getLevelNumber());
         holder.imageView.setImageResource(level.getLevelStars());
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onLevelClickListener.onLevelClicked(level.getLevelNumber());
+            }
+        });
     }
 
     @Override
@@ -50,6 +58,7 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
         ImageView imageView;
         TextView textView;
         LinearLayout layout;
+
         public FirstGameLevelsViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.levels_card);
@@ -59,4 +68,10 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
 
         }
     }
+
+    public interface OnLevelClickListener {
+        void onLevelClicked(String level);
+    }
+
+
 }

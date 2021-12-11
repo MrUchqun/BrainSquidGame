@@ -9,6 +9,7 @@
     app:cardCornerRadius="21dp">
 
     <LinearLayout
+
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
         android:id="@+id/levels_linear"
