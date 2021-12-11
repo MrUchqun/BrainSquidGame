@@ -159,7 +159,6 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                 itemCount = itemCount + 1;
             }
         }
-
         Random rnd = new Random();
         answersList.add(new FirstGameItem(itemCount));
         while (answersList.size() < 4) {
