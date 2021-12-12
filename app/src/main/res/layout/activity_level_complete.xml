@@ -24,7 +24,7 @@
             android:layout_marginBottom="60dp">
 
             <ImageView
-                android:id="@+id/comlete_stars"
+                android:id="@+id/complete_stars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/complete_star_3" />
@@ -109,17 +109,20 @@
         android:visibility="visible">
 
         <ImageView
+            android:id="@+id/complete_home"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginEnd="40dp"
             android:src="@drawable/ic_home_back" />
 
         <ImageView
+            android:id="@+id/complete_retry"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_restart" />
 
         <ImageView
+            android:id="@+id/complete_next"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="40dp"
