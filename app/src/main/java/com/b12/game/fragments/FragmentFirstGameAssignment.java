@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -52,7 +53,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private ProgressBar progressBar;
     private RelativeLayout relativeLayout;
     private TextView levelTxt, circler_progress_txt, levelInLevel;
-    private ImageView imageViewInCard;
+    private ImageView imageViewInCard, first_game_helth_count;
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
     private final Random rnd = new Random();
@@ -61,6 +62,8 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private final Handler handler = new Handler();
     private String levelTxtBundle;
     private SharedPreferences sharedPreferences;
+
+    private RecyclerView.LayoutManager layoutManager;
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -73,6 +76,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         sharedPreferences = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE);
         levelTxtBundle = sharedPreferences.getString("levelnum", "");
         levelCount = sharedPreferences.getInt("levelCount", 0);
+        layoutManager = new GridLayoutManager(getContext(), 5);
         answersList = new ArrayList<>();
         tempItems = new ArrayList<>();
         gameItems = new ArrayList<>();
@@ -80,6 +84,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         tempItems.add(R.drawable.img_2);
         tempItems.add(R.drawable.img_3);
         tempItems.add(R.drawable.img_4);
+        first_game_helth_count = view.findViewById(R.id.first_game_helth_count);
         cardView = view.findViewById(R.id.first_game_assignment_image_view_card);
         circler_progress_txt = view.findViewById(R.id.progress_circular_text);
         progressBarHorizontal = view.findViewById(R.id.horizontal_progress_bar);
@@ -94,11 +99,12 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         levelInLevel.setText(levelCount + "/" + levelTxtBundle);
         progressBarHorizontal.setVisibility(View.GONE);
         imageViewInCard.setVisibility(View.GONE);
+        if (Integer.parseInt(levelTxtBundle) <= 3) {
+            first_game_helth_count.setVisibility(View.GONE);
+        }
 //        cardView.setCardBackgroundColor(Color.WHITE);
 
         countDownTimer();
-
-
         generateImage();
 
         return view;
@@ -106,12 +112,18 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
 
     private void generateImage() {
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 10; i++) {
             int value = rnd.nextInt(4);
             gameItems.add(tempItems.get(value));
         }
+        recyclerViewImages.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return true;
+            }
+        });
         recyclerViewImages.setHasFixedSize(true);
-        recyclerViewImages.setLayoutManager(new GridLayoutManager(getContext(), 4));
+        recyclerViewImages.setLayoutManager(layoutManager);
         recyclerViewImages.setItemAnimator(null);
         firstGameAdapter = new FirstGameAdapter(gameItems);
         recyclerViewImages.setAdapter(firstGameAdapter);
@@ -180,9 +192,9 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         Collections.shuffle(answersList);
         final int sdk = android.os.Build.VERSION.SDK_INT;
         if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-            imageViewInCard.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icons_background));
+            imageViewInCard.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.big_icon_background));
         } else {
-            imageViewInCard.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.icons_background));
+            imageViewInCard.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.big_icon_background));
         }
         imageViewInCard.setImageResource(randomItem);
 
@@ -228,11 +240,12 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
             editorLevelNumber.apply();
             Fragment someFragment = new FragmentFirstGameAssignment();
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.game1_linear1, someFragment);
+            transaction.replace(R.id.fragment_holder, someFragment);
             transaction.commit();
         } else {
             Intent intent = new Intent(getContext(), LevelCompeletActivity.class);
             startActivity(intent);
+            getActivity().finish();
         }
 
 

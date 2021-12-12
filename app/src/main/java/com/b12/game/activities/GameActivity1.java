@@ -1,19 +1,16 @@
 package com.b12.game.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.b12.game.R;
 import com.b12.game.adapters.FirstGameLevelsAdapter;
-import com.b12.game.fragments.FragmentFirstGameAssignment;
 import com.b12.game.getset.Level;
 
 import java.util.ArrayList;
@@ -96,17 +93,14 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
         editorLevelNumber.putString("levelnum", level);
         editorLevelNumber.putInt("levelCount", 1);
         editorLevelNumber.apply();
-        linearLayout.setVisibility(View.GONE);
-        Fragment someFragment = new FragmentFirstGameAssignment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.game1_linear1, someFragment); // give your fragment container id in first parameter
-        transaction.commit();
+        Intent intent = new Intent(GameActivity1.this, FragmentHolder.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
     public void onBackPressed() {
-            linearLayout.setVisibility(View.VISIBLE);
-            super.onBackPressed();
+        super.onBackPressed();
 
 
     }
