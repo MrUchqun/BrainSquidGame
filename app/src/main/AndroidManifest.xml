@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Game">
         <activity
+            android:name=".activities.SecondGame3x3Activity"
+            android:exported="true" />
+        <activity
             android:name=".activities.GameActivity1"
             android:exported="true" />
         <activity
