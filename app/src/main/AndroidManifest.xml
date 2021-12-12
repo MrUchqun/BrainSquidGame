@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Game">
         <activity
+            android:name=".activities.FragmentHolder"
+            android:exported="false" />
+        <activity
             android:name=".activities.GameActivity1"
             android:exported="true" />
         <activity
