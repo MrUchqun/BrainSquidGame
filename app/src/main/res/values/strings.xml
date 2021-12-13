@@ -12,4 +12,9 @@
     <string name="string_congratulations">Congratulations</string>
     <string name="string_failed">Failed</string>
     <string name="string_level_failed">Level failed</string>
+    <string name="game_squid_puzzle">Squid Puzzle</string>
+    <string name="puzzle_3x3">3x3</string>
+    <string name="puzzle_4x4">4x4</string>
+    <string name="puzzle_5x5">5x5</string>
+    <string name="puzzle_rating">Rating</string>
 </resources>
