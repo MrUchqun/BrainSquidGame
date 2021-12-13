@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Game">
         <activity
+            android:name=".activities.SecondGame4x4Activity"
+            android:exported="true" />
+        <activity
             android:name=".activities.GameActivity1"
             android:exported="true" />
         <activity
