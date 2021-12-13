@@ -20,14 +20,14 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
             android:layout_marginLeft="35dp"
-            android:background="@drawable/shape_white_border"
+            android:background="@color/white"
             android:gravity="center|right"
             android:paddingHorizontal="15dp"
             android:paddingVertical="5dp"
             android:text="0"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="22sp"
-            android:textStyle="italic"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,8 +35,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:padding="5dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_baseline_touch_app_24"
+            android:src="@drawable/clarity_cursor_hand_click_line"
             app:layout_constraintBottom_toBottomOf="@id/stepCount4x4"
             app:layout_constraintLeft_toLeftOf="@id/stepCount4x4"
             app:layout_constraintTop_toTopOf="@id/stepCount4x4" />
@@ -46,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginRight="25dp"
-            android:background="@drawable/shape_white_border"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/stepCount4x4"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/stepCount4x4">
@@ -65,7 +66,7 @@
                 android:gravity="center"
                 android:paddingHorizontal="5dp"
                 android:paddingVertical="5dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="italic" />
 
@@ -95,7 +96,9 @@
 
 
     <GridLayout
+        android:background="#A3A1A1"
         android:id="@+id/grid_4x4"
+        android:padding="12dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="15dp"
@@ -307,11 +310,11 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <LinearLayout
         android:id="@+id/start4x4"
-        android:background="@drawable/main_shape_1"
+        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/line4x4_1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -339,7 +342,7 @@
             android:text="START"
             android:textStyle="bold|italic"
             android:textSize="23sp"
-            android:textColor="#C87904"
+            android:textColor="#000"
             android:paddingRight="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
