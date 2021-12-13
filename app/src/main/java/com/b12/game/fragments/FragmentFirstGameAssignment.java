@@ -62,6 +62,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private final Handler handler = new Handler();
     private String levelTxtBundle;
     private SharedPreferences sharedPreferences;
+    private Timer timer;
 
     private RecyclerView.LayoutManager layoutManager;
 
@@ -73,6 +74,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         View view = inflater.inflate(R.layout.fragment_first_game_assignment, container, false);
         SplashActivity splashActivity = new SplashActivity();
         splashActivity.changeStatusBarColor(getActivity());
+        timer = new Timer();
         sharedPreferences = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE);
         levelTxtBundle = sharedPreferences.getString("levelnum", "");
         levelCount = sharedPreferences.getInt("levelCount", 0);
@@ -112,7 +114,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
 
     private void generateImage() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             int value = rnd.nextInt(4);
             gameItems.add(tempItems.get(value));
         }
@@ -159,7 +161,6 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
 
     private void progressBarHorizontalTimer() {
-        final Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
@@ -167,6 +168,8 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                 progressBarHorizontal.setProgress(counter);
                 if (counter == 100) {
                     timer.cancel();
+//                    playWrongSound();
+//                    nextLevel();
                 }
             }
         };
@@ -175,8 +178,8 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void getRandomImageFromArray() {
-
-        randomItem = gameItems.get(0);
+        int randomImageFromList = rnd.nextInt(gameItems.size() - 1);
+        randomItem = gameItems.get(randomImageFromList);
         for (int i = 0; i < gameItems.size(); i++) {
             if (gameItems.get(i).equals(randomItem)) {
                 itemCount = itemCount + 1;
@@ -260,6 +263,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     public void onDetach() {
         super.onDetach();
         handler.removeCallbacksAndMessages(null);
+        timer.cancel();
     }
 
 }

@@ -67,7 +67,7 @@ class SecondGame3x3Activity : AppCompatActivity() {
                 x = tx
                 y = ty
                 //if (Base.getInstance()?.getIsValumeOn("Volume")!!) clickSound?.start()
-                Log.d("RRR", "clicked")
+                Log.d("RRR", "clicked $view")
                 if (btn?.text?.isEmpty() == true) {
                     btn?.text = btn1?.text
                     btn1?.text = ""

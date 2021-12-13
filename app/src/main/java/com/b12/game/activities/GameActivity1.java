@@ -81,7 +81,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
     }
 
     private void levelsList() {
-        for (int i = 1; i <= 15; i++) {
+        for (int i = 1; i <= 16; i++) {
             int sharedItem = sharedPreferences.getInt(Integer.toString(i), 0);
             list.add(new Level(Integer.toString(i), sharedItem, false));
         }

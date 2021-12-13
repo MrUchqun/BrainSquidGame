@@ -27,7 +27,6 @@ public class FragmentHolder extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
         Intent intent = new Intent(FragmentHolder.this, GameActivity1.class);
         startActivity(intent);
         finish();
