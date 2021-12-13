@@ -51,17 +51,17 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:fontFamily="@font/caesar_dressing"
+                        android:fontFamily="@font/alfa_slab_one"
                         android:gravity="center"
                         android:text="@string/game_1_name"
                         android:textColor="@color/white"
-                        android:textSize="28sp" />
+                        android:textSize="25sp" />
 
                     <ImageView
                         android:layout_gravity="right"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginEnd="7dp"
                         android:contentDescription="@string/iconic_play"
                         android:src="@drawable/ic_baseline_play_circle_outline_24_white"
                         tools:ignore="RtlHardcoded" />
@@ -82,19 +82,19 @@
             app:cardCornerRadius="30dp">
 
                     <TextView
-                        android:fontFamily="@font/caesar_dressing"
+                        android:fontFamily="@font/alfa_slab_one"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/game_2_name"
                         android:textColor="@color/white"
-                        android:textSize="28sp" />
+                        android:textSize="25sp" />
 
                     <ImageView
                         android:layout_gravity="right"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginEnd="7dp"
                         android:contentDescription="@string/iconic_play"
                         android:src="@drawable/ic_baseline_play_circle_outline_24_white"
                         tools:ignore="RtlHardcoded" />
@@ -115,19 +115,19 @@
             app:cardCornerRadius="30dp">
 
                     <TextView
-                        android:fontFamily="@font/caesar_dressing"
+                        android:fontFamily="@font/alfa_slab_one"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/game_3_name"
                         android:textColor="@color/white"
-                        android:textSize="28sp" />
+                        android:textSize="25sp" />
 
                     <ImageView
                         android:layout_gravity="right"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginEnd="7dp"
                         android:contentDescription="@string/iconic_play"
                         android:src="@drawable/ic_baseline_play_circle_outline_24_white"
                         tools:ignore="RtlHardcoded" />
@@ -149,7 +149,7 @@
 
 
                     <TextView
-                        android:fontFamily="@font/caesar_dressing"
+                        android:fontFamily="@font/alfa_slab_one"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -173,13 +173,13 @@
             app:cardCornerRadius="30dp">
 
                     <TextView
-                        android:fontFamily="@font/caesar_dressing"
+                        android:fontFamily="@font/alfa_slab_one"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/about_us"
                         android:textColor="@color/white"
-                        android:textSize="28sp" />
+                        android:textSize="25sp" />
 
         </androidx.cardview.widget.CardView>
 
