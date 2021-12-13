@@ -32,7 +32,7 @@
             android:gravity="center"
             android:text="@string/game_name"
             android:textColor="@color/white"
-            android:textSize="45sp"
+            android:textSize="50sp"
             android:textStyle="bold"/>
 
         <androidx.cardview.widget.CardView
@@ -101,38 +101,38 @@
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/play_game_3"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@color/button_color"
-            app:cardCornerRadius="30dp">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/play_game_3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            app:cardBackgroundColor="@color/button_color"-->
+<!--            app:cardCornerRadius="30dp">-->
 
-                    <TextView
-                        android:fontFamily="@font/alfa_slab_one"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/game_3_name"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/alfa_slab_one"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="@string/game_3_name"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="25sp" />-->
 
-                    <ImageView
-                        android:layout_gravity="right"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="7dp"
-                        android:contentDescription="@string/iconic_play"
-                        android:src="@drawable/ic_baseline_play_circle_outline_24_white"
-                        tools:ignore="RtlHardcoded" />
+<!--                    <ImageView-->
+<!--                        android:layout_gravity="right"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginEnd="7dp"-->
+<!--                        android:contentDescription="@string/iconic_play"-->
+<!--                        android:src="@drawable/ic_baseline_play_circle_outline_24_white"-->
+<!--                        tools:ignore="RtlHardcoded" />-->
 
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.cardview.widget.CardView
             android:id="@+id/settings"
@@ -155,7 +155,7 @@
                         android:gravity="center"
                         android:text="@string/settings"
                         android:textColor="@color/white"
-                        android:textSize="28sp" />
+                        android:textSize="25sp" />
 
         </androidx.cardview.widget.CardView>
 
