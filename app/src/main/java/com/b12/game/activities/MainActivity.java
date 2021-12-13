@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.play_game_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(MainActivity.this, SecondGameActivity.class);
+                Intent intent1 = new Intent(MainActivity.this, SecondGame3x3Activity.class);
                 startActivity(intent1);
             }
         });

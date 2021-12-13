@@ -1,6 +1,7 @@
 package com.b12.game;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 public class Base {
     private static Base base = null;
@@ -10,15 +11,31 @@ public class Base {
         this.context = context;
     }
 
-    static void init(Context context){
+    public static void init(Context context){
         base = new Base(context);
     }
 
-    static Base getInstance(){
+    public static Base getInstance(){
         return base;
     }
 
-    void setStepCount(String key, int msg){
-
+    public void setStepCount(String key, int msg){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        sharedPreferences.edit().putInt(key, msg).apply();
     }
+    public int getStepCount(String key){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(key, 0);
+    }
+
+    public void setFinishedTime(String key, String msg){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        sharedPreferences.edit().putString(key, msg).apply();
+    }
+    public String getFinishedTime(String key){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        return sharedPreferences.getString(key, "00:00");
+    }
+
+
 }

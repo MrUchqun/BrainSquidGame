@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.view.View
 import android.widget.*
+import com.b12.game.Base
+import com.b12.game.CustomWinnerAlert
 import com.b12.game.R
 import java.util.*
 
@@ -88,20 +90,20 @@ class SecondGameActivity : AppCompatActivity() {
 //                    val winningSound: MediaPlayer = MediaPlayer.create(this, R.raw.applause)
 //                    if (Base.getInstance()?.getIsValumeOn("Volume")!!) winningSound.start()
 
-//                    val customWinnerAlert = CustomWinnerAlert(this, keyTimer, keyStepsCount)
-//                    customWinnerAlert.setTimer(chronometer?.text.toString())
-//                    customWinnerAlert.setSteps(stepCount)
-//                    customWinnerAlert.setIsRecord(newRecord)
-//
-//                    customWinnerAlert.show()
-//                    customWinnerAlert.getHome()?.setOnClickListener {
+                    val customWinnerAlert = CustomWinnerAlert(this, keyTimer, keyStepsCount)
+                    customWinnerAlert.setTimer(chronometer?.text.toString())
+                    customWinnerAlert.setSteps(stepCount)
+                    customWinnerAlert.setIsRecord(newRecord)
+
+                    customWinnerAlert.show()
+                    customWinnerAlert.getHome()?.setOnClickListener {
 //                        winningSound.stop()
-//                        finish()
-//                    }
-//                    customWinnerAlert.getReplay()?.setOnClickListener {
-//                        restart()
-//                        customWinnerAlert.dismiss()
-//                    }
+                        finish()
+                    }
+                    customWinnerAlert.getReplay()?.setOnClickListener {
+                        restart()
+                        customWinnerAlert.dismiss()
+                    }
                 }
             }
         }
@@ -173,15 +175,15 @@ class SecondGameActivity : AppCompatActivity() {
     fun checkRecord(msg: String, steps: Int){
         val msgMinut = (msg[0].toString()+msg[1].toString()).toInt()
         val msgSecund = (msg[3].toString()+msg[4].toString()).toInt()
-//        val recordTime = Base.getInstance()?.getFinishedTime(keyTimer)
-//        val recordSteps = Base.getInstance()?.getStepCount(keyStepsCount)
-//        val recordMinut = (recordTime?.get(0).toString()+recordTime?.get(1).toString()).toInt()
-//        val recordSecund = (recordTime?.get(3).toString()+recordTime?.get(4).toString()).toInt()
+        val recordTime = Base.getInstance()?.getFinishedTime(keyTimer)
+        val recordSteps = Base.getInstance()?.getStepCount(keyStepsCount)
+        val recordMinut = (recordTime?.get(0).toString()+recordTime?.get(1).toString()).toInt()
+        val recordSecund = (recordTime?.get(3).toString()+recordTime?.get(4).toString()).toInt()
 
-//        if (msgMinut < recordMinut || msgMinut == recordMinut && msgSecund < recordSecund || msgMinut == recordMinut && msgSecund == recordSecund && steps < recordSteps!! || recordTime.equals("00:00")){
-//            Base.getInstance()?.setFinishedTime(keyTimer, msg)
-//            Base.getInstance()?.setStepCount(keyStepsCount, steps)
-//            newRecord = true
-//        } else newRecord = false
+        if (msgMinut < recordMinut || msgMinut == recordMinut && msgSecund < recordSecund || msgMinut == recordMinut && msgSecund == recordSecund && steps < recordSteps!! || recordTime.equals("00:00")){
+            Base.getInstance()?.setFinishedTime(keyTimer, msg)
+            Base.getInstance()?.setStepCount(keyStepsCount, steps)
+            newRecord = true
+        } else newRecord = false
     }
 }
