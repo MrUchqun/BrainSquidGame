@@ -69,7 +69,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
         SharedPreferences.Editor editorStars = getSharedPreferences("LEVELS", MODE_PRIVATE).edit();
         SharedPreferences.Editor editorStatus = getSharedPreferences("STATUS", MODE_PRIVATE).edit();
 
-        for (int i = 1; i <= 15; i++) {
+        for (int i = 1; i <= 16; i++) {
             editorStars.putInt(Integer.toString(i), R.drawable.stars_0);
             if (i > 3) {
                 editorStatus.putBoolean(Integer.toString(i), false);
