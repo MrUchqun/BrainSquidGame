@@ -64,6 +64,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
 //        });
     }
 
+
     private void creatingLevels() {
         SharedPreferences.Editor editorStars = getSharedPreferences("LEVELS", MODE_PRIVATE).edit();
         SharedPreferences.Editor editorStatus = getSharedPreferences("STATUS", MODE_PRIVATE).edit();
@@ -75,7 +76,10 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
             }
 
         }
-
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("firstStart", false);
+        editor.apply();
         editorStars.apply();
         editorStatus.apply();
     }

@@ -56,14 +56,15 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private ImageView imageViewInCard, first_game_helth_count;
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
-    private final Random rnd = new Random();
+    private Random rnd;
     private int counter = 0, itemCount = 0;
     private int levelCount, randomItem;
-    private final Handler handler = new Handler();
+    private Handler handler;
     private String levelTxtBundle;
+    private MediaPlayer mp;
     private SharedPreferences sharedPreferences;
-
     private RecyclerView.LayoutManager layoutManager;
+    private Timer timer;
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -73,6 +74,9 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         View view = inflater.inflate(R.layout.fragment_first_game_assignment, container, false);
         SplashActivity splashActivity = new SplashActivity();
         splashActivity.changeStatusBarColor(getActivity());
+        handler = new Handler();
+        rnd = new Random();
+        timer = new Timer();
         sharedPreferences = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE);
         levelTxtBundle = sharedPreferences.getString("levelnum", "");
         levelCount = sharedPreferences.getInt("levelCount", 0);
@@ -111,6 +115,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     }
 
 
+    @SuppressLint("ClickableViewAccessibility")
     private void generateImage() {
         for (int i = 0; i < 10; i++) {
             int value = rnd.nextInt(4);
@@ -159,14 +164,17 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
 
     private void progressBarHorizontalTimer() {
-        final Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
                 counter++;
                 progressBarHorizontal.setProgress(counter);
                 if (counter == 100) {
+                    playWrongSound();
+                    nextLevel();
                     timer.cancel();
+
+
                 }
             }
         };
@@ -210,6 +218,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
     @Override
     public void onAnswerClicked(int answer, LinearLayout layout) {
+        timer.cancel();
         checkAnswer(answer, layout);
     }
 
@@ -229,7 +238,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     }
 
     private void playWrongSound() {
-        final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.wrong_sound);
+        mp = MediaPlayer.create(getContext(), R.raw.wrong_sound);
         mp.start();
     }
 
@@ -252,13 +261,14 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     }
 
     private void playSuccesSound() {
-        final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.succesfully_sound);
+        mp = MediaPlayer.create(getContext(), R.raw.succesfully_sound);
         mp.start();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
+        timer.cancel();
         handler.removeCallbacksAndMessages(null);
     }
 
