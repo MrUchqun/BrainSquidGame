@@ -147,14 +147,14 @@ class SecondGame3x3Activity : AppCompatActivity() {
             isStarted = true
             loadNumbers(numbers.shuffled())
             findViewById<TextView>(R.id.start3x3text).text = "RESTART"
-            findViewById<ImageView>(R.id.start3x3img).setImageResource(R.drawable.ic_baseline_refresh_black_24)
+            findViewById<ImageView>(R.id.start3x3img).setImageResource(R.drawable.ic_baseline_refresh_24)
             chronometer?.base = SystemClock.elapsedRealtime()
             chronometer?.start()
         } else {
             isStarted = true
             restart()
             findViewById<TextView>(R.id.start3x3text).text = "RESTART"
-            findViewById<ImageView>(R.id.start3x3img).setImageResource(R.drawable.ic_baseline_refresh_black_24)
+            findViewById<ImageView>(R.id.start3x3img).setImageResource(R.drawable.ic_baseline_refresh_24)
             chronometer?.start()
 //            loadNumbers(numbers.shuffled())
         }
