@@ -4,10 +4,12 @@ import android.graphics.drawable.Drawable
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.SystemClock
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import com.b12.game.Base
 import com.b12.game.CustomWinnerAlert
 import com.b12.game.R
@@ -53,6 +55,20 @@ class SecondGame3x3Activity : AppCompatActivity() {
         loadMap()
         loadNumbers(numbers)
 
+        findViewById<ImageView>(R.id.help_for_3x3).setOnLongClickListener(View.OnLongClickListener {
+            Log.d("Click", "Clicked")
+            val countDownTimer = object: CountDownTimer(2000, 1000){
+                override fun onTick(p0: Long) {
+                    findViewById<ImageView>(R.id.real_pic_3x3).visibility = View.VISIBLE
+                }
+
+                override fun onFinish() {
+                    findViewById<ImageView>(R.id.real_pic_3x3).visibility = View.GONE
+                }
+            }
+            countDownTimer.start()
+            return@OnLongClickListener true
+        })
 
     }
 

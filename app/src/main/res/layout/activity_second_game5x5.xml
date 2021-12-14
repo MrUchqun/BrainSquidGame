@@ -370,6 +370,19 @@
 
     </GridLayout>
 
+    <ImageView
+        android:id="@+id/real_pic_5x5"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/grid_5x5"
+        app:layout_constraintBottom_toBottomOf="@id/grid_5x5"
+        app:layout_constraintLeft_toLeftOf="@id/grid_5x5"
+        app:layout_constraintRight_toRightOf="@id/grid_5x5"
+        android:src="@drawable/pic_5x5"
+        android:padding="10dp"
+        android:scaleType="fitXY"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
     <LinearLayout
         android:id="@+id/line5x5_1"
         android:layout_width="match_parent"
@@ -379,6 +392,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
+
+    <ImageView
+        android:id="@+id/help_for_5x5"
+        app:layout_constraintTop_toBottomOf="@id/line5x5_1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_baseline_help_outline_24"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+
 
     <LinearLayout
         android:id="@+id/start5x5"
