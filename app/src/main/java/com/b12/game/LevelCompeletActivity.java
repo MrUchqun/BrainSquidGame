@@ -23,6 +23,7 @@ public class LevelCompeletActivity extends AppCompatActivity {
         retry = findViewById(R.id.complete_retry);
         menu = findViewById(R.id.complete_home);
         next = findViewById(R.id.complete_next);
+        String sessionId = getIntent().getStringExtra("EXTRA_SESSION_ID");
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -57,7 +57,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
     private Random rnd;
-    private int counter = 0, itemCount = 0;
+    private int counter = 0, itemCount = 0, playerHealth;
     private int levelCount, randomItem;
     private Handler handler;
     private String levelTxtBundle;
@@ -80,6 +80,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         sharedPreferences = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE);
         levelTxtBundle = sharedPreferences.getString("levelnum", "");
         levelCount = sharedPreferences.getInt("levelCount", 0);
+        playerHealth = sharedPreferences.getInt("playerHealth", 3);
         layoutManager = new GridLayoutManager(getContext(), 5);
         answersList = new ArrayList<>();
         tempItems = new ArrayList<>();
@@ -244,6 +245,19 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
     private void nextLevel() {
         if (levelCount < Integer.parseInt(levelTxtBundle)) {
+            if (Integer.parseInt(levelTxtBundle) > 3) {
+                if (playerHealth == 3)
+                    first_game_helth_count.setImageResource(R.drawable.player_health_full);
+                if (playerHealth == 2)
+                    first_game_helth_count.setImageResource(R.drawable.player_health_two);
+                if (playerHealth == 1)
+                    first_game_helth_count.setImageResource(R.drawable.player_health_one);
+                if (playerHealth == 0) {
+                    first_game_helth_count.setImageResource(R.drawable.player_health_null);
+                    endGame();
+                }
+            }
+
             SharedPreferences.Editor editorLevelNumber = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
             editorLevelNumber.putInt("levelCount", levelCount + 1);
             editorLevelNumber.apply();
@@ -252,12 +266,17 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
             transaction.replace(R.id.fragment_holder, someFragment);
             transaction.commit();
         } else {
-            Intent intent = new Intent(getContext(), LevelCompeletActivity.class);
-            startActivity(intent);
-            getActivity().finish();
+            endGame();
         }
 
 
+    }
+
+    private void endGame() {
+        Intent intent = new Intent(getContext(), LevelCompeletActivity.class);
+        intent.putExtra("PLAYERHEALTH", playerHealth);
+        startActivity(intent);
+        getActivity().finish();
     }
 
     private void playSuccesSound() {

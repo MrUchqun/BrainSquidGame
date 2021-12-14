@@ -23,11 +23,11 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-<!--            <ImageView-->
-<!--                android:id="@+id/seasonBack"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/icon_chevron_back_circle_outline" />-->
+            <!--            <ImageView-->
+            <!--                android:id="@+id/seasonBack"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:src="@drawable/icon_chevron_back_circle_outline" />-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -39,16 +39,16 @@
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/seasonNext"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/icon_chevron_circle_outline" />-->
+            <!--            <ImageView-->
+            <!--                android:id="@+id/seasonNext"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:src="@drawable/icon_chevron_circle_outline" />-->
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/gainedStars"
+            android:id="@+id/allStars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -56,7 +56,6 @@
             android:drawablePadding="5dp"
             android:fontFamily="@font/caesar_dressing"
             android:gravity="center"
-            android:text="@string/level_star_0_45"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
