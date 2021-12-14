@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/page_background_gradient"
-    tools:context=".activities.SecondGameActivity">
+    tools:context=".activities.SecondGame4x4Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar4x4"
@@ -278,6 +278,19 @@
 
     </GridLayout>
 
+    <ImageView
+        android:id="@+id/real_pic_4x4"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/grid_4x4"
+        app:layout_constraintBottom_toBottomOf="@id/grid_4x4"
+        app:layout_constraintLeft_toLeftOf="@id/grid_4x4"
+        app:layout_constraintRight_toRightOf="@id/grid_4x4"
+        android:src="@drawable/pic_4x4"
+        android:padding="10dp"
+        android:scaleType="fitXY"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
     <LinearLayout
         android:id="@+id/line4x4_1"
         android:layout_width="match_parent"
@@ -287,6 +300,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
+
+    <ImageView
+        android:id="@+id/help_for_4x4"
+        app:layout_constraintTop_toBottomOf="@id/line4x4_1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_baseline_help_outline_24"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+
 
     <LinearLayout
         android:id="@+id/start4x4"
