@@ -397,46 +397,49 @@
         android:id="@+id/help_for_5x5"
         app:layout_constraintTop_toBottomOf="@id/line5x5_1"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="15dp"
+        android:layout_margin="20dp"
         android:src="@drawable/ic_baseline_help_outline_24"
         android:layout_width="40dp"
         android:layout_height="40dp"/>
 
-
-    <LinearLayout
-        android:id="@+id/start5x5"
-        android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/line5x5_1"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:weightSum="5"
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="startGame5x5"
-        android:layout_width="155dp"
-        android:layout_height="wrap_content">
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line5x5_1"
+        tools:ignore="MissingConstraints,UsingOnClickInXml">
 
-        <ImageView
-            android:id="@+id/start5x5img"
-            android:padding="10dp"
-            android:src="@drawable/ic_baseline_play_circle_outline_24"
-            android:layout_weight="1.4"
-            android:layout_gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="40dp"/>
+        <LinearLayout
+            android:id="@+id/start5x5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/start5x5text"
-            android:layout_weight="3.6"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="START"
-            android:textStyle="bold|italic"
-            android:textSize="23sp"
-            android:textColor="#000"
-            android:paddingRight="10dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/start5x5img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_baseline_play_circle_outline_24" />
+
+            <TextView
+                android:id="@+id/start5x5text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/alfa_slab_one"
+                android:text="START"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
