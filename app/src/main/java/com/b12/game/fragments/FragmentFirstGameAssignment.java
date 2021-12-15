@@ -172,6 +172,10 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                 counter++;
                 progressBarHorizontal.setProgress(counter);
                 if (counter == 100) {
+                    playerHealth = playerHealth - 1;
+                    SharedPreferences.Editor editorLevelNumber = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+                    editorLevelNumber.putInt("playerHealth", playerHealth);
+                    editorLevelNumber.apply();
                     playWrongSound();
                     nextLevel();
                     timer.cancel();
