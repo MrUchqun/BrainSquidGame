@@ -81,6 +81,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         levelTxtBundle = sharedPreferences.getString("levelnum", "");
         levelCount = sharedPreferences.getInt("levelCount", 0);
         playerHealth = sharedPreferences.getInt("playerHealth", 3);
+
         layoutManager = new GridLayoutManager(getContext(), 5);
         answersList = new ArrayList<>();
         tempItems = new ArrayList<>();
@@ -185,7 +186,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void getRandomImageFromArray() {
 
-        randomItem = gameItems.get(0);
+        randomItem = gameItems.get(rnd.nextInt(gameItems.size()));
         for (int i = 0; i < gameItems.size(); i++) {
             if (gameItems.get(i).equals(randomItem)) {
                 itemCount = itemCount + 1;
@@ -231,6 +232,10 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
             playSuccesSound();
             nextLevel();
         } else {
+            playerHealth = playerHealth - 1;
+            SharedPreferences.Editor editorLevelNumber = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+            editorLevelNumber.putInt("playerHealth", playerHealth);
+            editorLevelNumber.apply();
             layout.setBackgroundColor(Color.parseColor("#F24E1E"));
             imageViewInCard.setImageResource(R.drawable.wrong_img);
             playWrongSound();
@@ -257,7 +262,6 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                     endGame();
                 }
             }
-
             SharedPreferences.Editor editorLevelNumber = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
             editorLevelNumber.putInt("levelCount", levelCount + 1);
             editorLevelNumber.apply();
@@ -275,8 +279,10 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private void endGame() {
         Intent intent = new Intent(getContext(), LevelCompeletActivity.class);
         intent.putExtra("PLAYERHEALTH", playerHealth);
+        intent.putExtra("LEVELNUMBER", levelTxtBundle);
         startActivity(intent);
         getActivity().finish();
+
     }
 
     private void playSuccesSound() {

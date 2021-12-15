@@ -36,8 +36,10 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
         linearLayout = findViewById(R.id.game1_linear2);
         allStars = findViewById(R.id.allStars);
 
+        sharedPreferences = getSharedPreferences("TOTALSTARS", MODE_PRIVATE);
+        String totalstars = sharedPreferences.getString("TOTALSTARS", "");
         sharedPreferences = getSharedPreferences("ALLSTARS", MODE_PRIVATE);
-        allStars.setText(sharedPreferences.getInt("ALLSTARS", 0) + "/45");
+        allStars.setText(totalstars + "/45");
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         boolean firstStart = prefs.getBoolean("firstStart", true);
         if (firstStart) {
@@ -88,6 +90,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
             boolean sharedStatus = sharedPreferencesStatus.getBoolean(Integer.toString(i), true);
             list.add(new Level(Integer.toString(i + 1), sharedItem, sharedStatus));
         }
+        calculateTotalStars(list);
     }
 
     @Override
@@ -98,6 +101,8 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
             editorLevelNumber.putInt("levelCount", 1);
             editorLevelNumber.putInt("levelScore", 0);
             editorLevelNumber.putInt("playerHealth", 3);
+            editorLevelNumber.putInt("iconsCount", 6);
+
             editorLevelNumber.apply();
             Intent intent = new Intent(GameActivity1.this, FragmentHolder.class);
             startActivity(intent);
@@ -106,6 +111,24 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
             Toast.makeText(this, "Sizda yetarli yulduzchalar mavjud emas", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    private void calculateTotalStars(ArrayList<Level> list) {
+        int totalStars = 0;
+        for (Level item : list) {
+            if (item.getLevelStars() == R.drawable.stars_1) {
+                totalStars = totalStars + 1;
+            } else if (item.getLevelStars() == R.drawable.stars_2) {
+                totalStars = totalStars + 2;
+            } else if (item.getLevelStars() == R.drawable.stars_3) {
+                totalStars = totalStars + 3;
+            }
+
+        }
+        SharedPreferences sharedpreferences = getSharedPreferences("TOTALSTARS", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString("TOTALSTARS", String.valueOf(totalStars));
+        editor.apply();
     }
 
     @Override
