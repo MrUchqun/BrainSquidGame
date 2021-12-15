@@ -1,6 +1,9 @@
 package com.b12.game.adapters;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +24,7 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
     ArrayList<Level> list;
     Context context;
     OnLevelClickListener onLevelClickListener;
+    SharedPreferences sharedPreferences;
 
     public FirstGameLevelsAdapter(ArrayList<Level> list, Context context, OnLevelClickListener onLevelClickListener) {
         this.list = list;
@@ -37,13 +41,19 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
 
     @Override
     public void onBindViewHolder(@NonNull FirstGameLevelsViewHolder holder, int position) {
+        sharedPreferences = context.getSharedPreferences("STATUS", MODE_PRIVATE);
+        boolean levelStatus = sharedPreferences.getBoolean(Integer.toString(position), true);
         Level level = list.get(position);
-        holder.textView.setText(level.getLevelNumber());
+        if (levelStatus) {
+            holder.textView.setText(level.getLevelNumber());
+        } else {
+            holder.textView.setText("Lock");
+        }
         holder.imageView.setImageResource(level.getLevelStars());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onLevelClickListener.onLevelClicked(level.getLevelNumber());
+                onLevelClickListener.onLevelClicked(level.getLevelNumber(), level.isStatus());
             }
         });
     }
@@ -70,7 +80,7 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
     }
 
     public interface OnLevelClickListener {
-        void onLevelClicked(String level);
+        void onLevelClicked(String level, boolean status);
     }
 
 

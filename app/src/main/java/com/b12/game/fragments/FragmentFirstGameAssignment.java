@@ -56,15 +56,15 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private ImageView imageViewInCard, first_game_helth_count;
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
-    private final Random rnd = new Random();
-    private int counter = 0, itemCount = 0;
+    private Random rnd;
+    private int counter = 0, itemCount = 0, playerHealth;
     private int levelCount, randomItem;
-    private final Handler handler = new Handler();
+    private Handler handler;
     private String levelTxtBundle;
+    private MediaPlayer mp;
     private SharedPreferences sharedPreferences;
-    private Timer timer;
-
     private RecyclerView.LayoutManager layoutManager;
+    private Timer timer;
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -74,10 +74,14 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         View view = inflater.inflate(R.layout.fragment_first_game_assignment, container, false);
         SplashActivity splashActivity = new SplashActivity();
         splashActivity.changeStatusBarColor(getActivity());
+        handler = new Handler();
+        rnd = new Random();
         timer = new Timer();
         sharedPreferences = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE);
         levelTxtBundle = sharedPreferences.getString("levelnum", "");
         levelCount = sharedPreferences.getInt("levelCount", 0);
+        playerHealth = sharedPreferences.getInt("playerHealth", 3);
+
         layoutManager = new GridLayoutManager(getContext(), 5);
         answersList = new ArrayList<>();
         tempItems = new ArrayList<>();
@@ -113,8 +117,9 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     }
 
 
+    @SuppressLint("ClickableViewAccessibility")
     private void generateImage() {
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             int value = rnd.nextInt(4);
             gameItems.add(tempItems.get(value));
         }
@@ -167,9 +172,11 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                 counter++;
                 progressBarHorizontal.setProgress(counter);
                 if (counter == 100) {
+                    playWrongSound();
+                    nextLevel();
                     timer.cancel();
-//                    playWrongSound();
-//                    nextLevel();
+
+
                 }
             }
         };
@@ -178,8 +185,8 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void getRandomImageFromArray() {
-        int randomImageFromList = rnd.nextInt(gameItems.size() - 1);
-        randomItem = gameItems.get(randomImageFromList);
+
+        randomItem = gameItems.get(rnd.nextInt(gameItems.size()));
         for (int i = 0; i < gameItems.size(); i++) {
             if (gameItems.get(i).equals(randomItem)) {
                 itemCount = itemCount + 1;
@@ -213,6 +220,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
 
     @Override
     public void onAnswerClicked(int answer, LinearLayout layout) {
+        timer.cancel();
         checkAnswer(answer, layout);
     }
 
@@ -224,6 +232,10 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
             playSuccesSound();
             nextLevel();
         } else {
+            playerHealth = playerHealth - 1;
+            SharedPreferences.Editor editorLevelNumber = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+            editorLevelNumber.putInt("playerHealth", playerHealth);
+            editorLevelNumber.apply();
             layout.setBackgroundColor(Color.parseColor("#F24E1E"));
             imageViewInCard.setImageResource(R.drawable.wrong_img);
             playWrongSound();
@@ -232,12 +244,24 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     }
 
     private void playWrongSound() {
-        final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.wrong_sound);
+        mp = MediaPlayer.create(getContext(), R.raw.wrong_sound);
         mp.start();
     }
 
     private void nextLevel() {
         if (levelCount < Integer.parseInt(levelTxtBundle)) {
+            if (Integer.parseInt(levelTxtBundle) > 3) {
+                if (playerHealth == 3)
+                    first_game_helth_count.setImageResource(R.drawable.player_health_full);
+                if (playerHealth == 2)
+                    first_game_helth_count.setImageResource(R.drawable.player_health_two);
+                if (playerHealth == 1)
+                    first_game_helth_count.setImageResource(R.drawable.player_health_one);
+                if (playerHealth == 0) {
+                    first_game_helth_count.setImageResource(R.drawable.player_health_null);
+                    endGame();
+                }
+            }
             SharedPreferences.Editor editorLevelNumber = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
             editorLevelNumber.putInt("levelCount", levelCount + 1);
             editorLevelNumber.apply();
@@ -246,24 +270,31 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
             transaction.replace(R.id.fragment_holder, someFragment);
             transaction.commit();
         } else {
-            Intent intent = new Intent(getContext(), LevelCompeletActivity.class);
-            startActivity(intent);
-            getActivity().finish();
+            endGame();
         }
 
 
     }
 
+    private void endGame() {
+        Intent intent = new Intent(getContext(), LevelCompeletActivity.class);
+        intent.putExtra("PLAYERHEALTH", playerHealth);
+        intent.putExtra("LEVELNUMBER", levelTxtBundle);
+        startActivity(intent);
+        getActivity().finish();
+
+    }
+
     private void playSuccesSound() {
-        final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.succesfully_sound);
+        mp = MediaPlayer.create(getContext(), R.raw.succesfully_sound);
         mp.start();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        handler.removeCallbacksAndMessages(null);
         timer.cancel();
+        handler.removeCallbacksAndMessages(null);
     }
 
 }

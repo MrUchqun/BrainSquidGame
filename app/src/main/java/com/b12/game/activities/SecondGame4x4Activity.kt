@@ -4,7 +4,9 @@ import android.graphics.drawable.Drawable
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.SystemClock
+import android.util.Log
 import android.view.View
 import android.widget.*
 import com.b12.game.Base
@@ -52,6 +54,20 @@ class SecondGame4x4Activity : AppCompatActivity() {
         loadMap()
         loadNumbers(numbers)
 
+        findViewById<ImageView>(R.id.help_for_4x4).setOnLongClickListener(View.OnLongClickListener {
+            Log.d("Click", "Clicked")
+            val countDownTimer = object: CountDownTimer(2000, 1000){
+                override fun onTick(p0: Long) {
+                    findViewById<ImageView>(R.id.real_pic_4x4).visibility = View.VISIBLE
+                }
+
+                override fun onFinish() {
+                    findViewById<ImageView>(R.id.real_pic_4x4).visibility = View.GONE
+                }
+            }
+            countDownTimer.start()
+            return@OnLongClickListener true
+        })
 
     }
 

@@ -13,7 +13,8 @@ import com.b12.game.activities.GameActivity1;
 
 public class LevelCompeletActivity extends AppCompatActivity {
 
-    ImageView stars, retry, menu, next;
+    private ImageView stars, retry, menu, next;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,7 +24,33 @@ public class LevelCompeletActivity extends AppCompatActivity {
         retry = findViewById(R.id.complete_retry);
         menu = findViewById(R.id.complete_home);
         next = findViewById(R.id.complete_next);
+        sharedPreferences = getSharedPreferences("LEVELS", MODE_PRIVATE);
+        SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELS", MODE_PRIVATE).edit();
 
+        int health = getIntent().getIntExtra("PLAYERHEALTH", 0);
+        String level = getIntent().getStringExtra("LEVELNUMBER");
+        int minus = Integer.parseInt(level) - 1;
+        if (health == 3) {
+            stars.setImageResource(R.drawable.complete_star_3);
+            editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_3);
+        }
+
+        if (health == 2) {
+            stars.setImageResource(R.drawable.complete_star_2);
+            editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_2);
+        }
+        if (health == 1) {
+            stars.setImageResource(R.drawable.complete_star_1);
+            editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_1);
+        }
+
+        if (health == 0) {
+            stars.setImageResource(R.drawable.complete_star_0);
+            editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_0);
+        }
+
+
+        editorLevelNumber.apply();
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

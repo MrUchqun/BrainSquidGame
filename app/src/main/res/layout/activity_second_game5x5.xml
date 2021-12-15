@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/page_background_gradient"
-    tools:context=".activities.SecondGameActivity">
+    tools:context=".activities.SecondGame5x5Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar5x5"
@@ -16,7 +16,7 @@
 
         <TextView
             android:id="@+id/stepCount5x5"
-            android:layout_width="75dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
             android:layout_marginLeft="35dp"
@@ -27,7 +27,7 @@
             android:text="0"
             android:textColor="@color/black"
             android:textSize="22sp"
-            android:textStyle="bold"
+            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,6 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:padding="5dp"
             android:scaleType="fitXY"
             android:src="@drawable/clarity_cursor_hand_click_line"
             app:layout_constraintBottom_toBottomOf="@id/stepCount5x5"
@@ -74,13 +73,13 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/space2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar5x5">
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/space2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/toolbar5x5">-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
     <!--        android:layout_width="0dp"-->
@@ -102,13 +101,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginVertical="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="50dp"
         android:columnCount="5"
         android:rowCount="5"
         app:layout_constraintBottom_toBottomOf="@id/line5x5_1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/space2">
+        app:layout_constraintTop_toBottomOf="@id/toolbar5x5">
 
         <Button
             android:textSize="@dimen/textSizeButton4x4"
@@ -117,7 +117,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="00"
             android:text="" />
@@ -128,7 +127,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="01"
             android:text="2" />
@@ -139,7 +137,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="02"
             android:text="3" />
@@ -150,7 +147,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="03"
             android:text="4" />
@@ -161,7 +157,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="04"
             android:text="4" />
@@ -173,7 +168,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="10"
             android:text="5" />
@@ -184,7 +178,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="11"
             android:text="6" />
@@ -195,7 +188,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="12"
             android:text="7" />
@@ -206,7 +198,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="13"
             android:text="8" />
@@ -217,7 +208,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="14"
             android:text="8" />
@@ -229,7 +219,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="20"
             android:text="9" />
@@ -240,7 +229,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="21"
             android:text="10" />
@@ -251,7 +239,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="22"
             android:text="11" />
@@ -262,7 +249,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="23"
             android:text="12" />
@@ -273,7 +259,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="24"
             android:text="12" />
@@ -285,7 +270,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="30"
             android:text="13" />
@@ -296,7 +280,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="31"
             android:text="14" />
@@ -307,7 +290,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="32"
             android:text="" />
@@ -317,7 +299,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="33"
             android:background="@drawable/pic_5x5_7"
@@ -328,7 +309,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="34"
             android:background="@drawable/pic_5x5_6"
@@ -342,7 +322,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="40"
             android:text="13" />
@@ -353,7 +332,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="41"
             android:text="14" />
@@ -364,7 +342,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="42"
             android:text="" />
@@ -375,7 +352,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="43"
             android:text="" />
@@ -385,7 +361,6 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_marginVertical="3dp"
             android:onClick="onClick5x5"
             android:tag="44"
             android:visibility="invisible"
@@ -393,6 +368,19 @@
             android:text="" />
 
     </GridLayout>
+
+    <ImageView
+        android:id="@+id/real_pic_5x5"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/grid_5x5"
+        app:layout_constraintBottom_toBottomOf="@id/grid_5x5"
+        app:layout_constraintLeft_toLeftOf="@id/grid_5x5"
+        app:layout_constraintRight_toRightOf="@id/grid_5x5"
+        android:src="@drawable/pic_5x5"
+        android:padding="10dp"
+        android:scaleType="fitXY"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
 
     <LinearLayout
         android:id="@+id/line5x5_1"
@@ -404,40 +392,53 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
 
-    <LinearLayout
-        android:id="@+id/start5x5"
-        android:background="@color/white"
+    <ImageView
+        android:id="@+id/help_for_5x5"
         app:layout_constraintTop_toBottomOf="@id/line5x5_1"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:weightSum="5"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_baseline_help_outline_24"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="startGame5x5"
-        android:layout_width="155dp"
-        android:layout_height="wrap_content">
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line5x5_1"
+        tools:ignore="MissingConstraints,UsingOnClickInXml">
 
-        <ImageView
-            android:id="@+id/start5x5img"
-            android:padding="10dp"
-            android:src="@drawable/ic_baseline_play_circle_outline_24"
-            android:layout_weight="1.4"
-            android:layout_gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="40dp"/>
+        <LinearLayout
+            android:id="@+id/start5x5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/start5x5text"
-            android:layout_weight="3.6"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="START"
-            android:textStyle="bold|italic"
-            android:textSize="23sp"
-            android:textColor="#000"
-            android:paddingRight="10dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/start5x5img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_baseline_play_circle_outline_24" />
+
+            <TextView
+                android:id="@+id/start5x5text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/alfa_slab_one"
+                android:text="START"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -89,10 +89,11 @@
                 android:background="@drawable/shape_white_border">
 
                 <ImageView
+                    android:layout_marginEnd="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:paddingHorizontal="5dp"
-                    android:src="@drawable/ic_baseline_touch_app_24" />
+                    android:src="@drawable/clarity_cursor_hand_click_line" />
 
                 <TextView
                     android:id="@+id/textResultSteps"
@@ -159,10 +160,11 @@
                 android:background="@drawable/shape_white_border">
 
                 <ImageView
+                    android:layout_marginEnd="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:paddingHorizontal="5dp"
-                    android:src="@drawable/ic_baseline_touch_app_24" />
+                    android:src="@drawable/clarity_cursor_hand_click_line" />
 
                 <TextView
                     android:id="@+id/textRecordSteps"

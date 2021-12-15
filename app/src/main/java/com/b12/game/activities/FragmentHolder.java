@@ -1,9 +1,15 @@
 package com.b12.game.activities;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -12,12 +18,47 @@ import com.b12.game.fragments.FragmentFirstGameAssignment;
 
 public class FragmentHolder extends AppCompatActivity {
 
+    private Dialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_holder);
         SplashActivity splashActivity = new SplashActivity();
         splashActivity.changeStatusBarColor(this);
+        dialog = new Dialog(this);
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart = prefs.getBoolean("firstgame", true);
+        if (firstStart) {
+            onlyOnceStart();
+        } else {
+            mainGame();
+        }
+
+
+    }
+
+    private void onlyOnceStart() {
+        dialog.setContentView(R.layout.fragment_start_first_game);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        CardView cardView = dialog.findViewById(R.id.first_game_assignment_play_card);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                mainGame();
+            }
+        });
+        dialog.onBackPressed();
+
+        dialog.show();
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("firstgame", false);
+        editor.apply();
+    }
+
+    public void mainGame() {
         Fragment someFragment = new FragmentFirstGameAssignment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_holder, someFragment);
