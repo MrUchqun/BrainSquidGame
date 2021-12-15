@@ -12,9 +12,13 @@ import androidx.cardview.widget.CardView
 import com.b12.game.Base
 import com.b12.game.CustomWinnerAlert
 import com.b12.game.R
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import org.w3c.dom.Text
 import java.util.*
 
 class SecondGameActivity : AppCompatActivity() {
+
+    val games = arrayOf("3x3", "4x4", "5x5")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,5 +37,38 @@ class SecondGameActivity : AppCompatActivity() {
             startActivity(intent)
         })
 
+        findViewById<CardView>(R.id.records_squid_puzzle).setOnClickListener {
+            showBottomSheetDialog()
+        }
+
+    }
+
+    private fun showBottomSheetDialog(){
+        val bottomSheetDialog = BottomSheetDialog(this)
+        bottomSheetDialog.setContentView(R.layout.bottom_sheet_for_records)
+
+        val spinner = bottomSheetDialog.findViewById<Spinner>(R.id.spinner_records)
+        val stepRecords = bottomSheetDialog.findViewById<TextView>(R.id.stepCountRecords)
+        val timeRecords = bottomSheetDialog.findViewById<TextView>(R.id.recordTime)
+
+        bottomSheetDialog.show()
+
+        val arrayAdapter = ArrayAdapter(applicationContext,android.R.layout.simple_spinner_item, games)
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner?.adapter = arrayAdapter
+
+        spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                 val keyTimer = "Timer${games[p2]}"
+                 val keyStepsCount = "Steps${games[p2]}"
+                stepRecords?.text = Base.getInstance().getStepCount(keyStepsCount).toString()
+                timeRecords?.text = Base.getInstance().getFinishedTime(keyTimer)
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
     }
 }

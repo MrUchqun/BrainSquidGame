@@ -37,5 +37,9 @@ public class Base {
         return sharedPreferences.getString(key, "00:00");
     }
 
+    public void setIsVolumeOn(String key, boolean msg){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        sharedPreferences.edit().putBoolean(key, msg).apply();
+    }
 
 }
