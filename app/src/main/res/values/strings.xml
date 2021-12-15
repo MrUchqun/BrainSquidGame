@@ -16,7 +16,7 @@
     <string name="puzzle_3x3">3x3</string>
     <string name="puzzle_4x4">4x4</string>
     <string name="puzzle_5x5">5x5</string>
-    <string name="puzzle_rating">Rating</string>
+    <string name="puzzle_high_scores">High scores</string>
     <string name="string_remember_game">Remember! Game</string>
     <string name="level_star_0_45">0 / 45</string>
 </resources>

@@ -142,7 +142,7 @@
             app:cardBackgroundColor="@color/button_color">
 
             <TextView
-                android:text="@string/puzzle_rating"
+                android:text="@string/puzzle_high_scores"
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:paddingVertical="10dp"
