@@ -89,6 +89,7 @@
                 android:background="@drawable/shape_white_border">
 
                 <ImageView
+                    android:padding="5dp"
                     android:layout_marginEnd="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -160,6 +161,7 @@
                 android:background="@drawable/shape_white_border">
 
                 <ImageView
+                    android:padding="5dp"
                     android:layout_marginEnd="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
