@@ -48,7 +48,7 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
             holder.textView.setText(level.getLevelNumber());
         } else {
             holder.textView.setText("Lock");
-            holder.imageView.setVisibility(View.GONE);
+            holder.imageView.setVisibility(View.INVISIBLE);
         }
         holder.imageView.setImageResource(level.getLevelStars());
         holder.cardView.setOnClickListener(new View.OnClickListener() {

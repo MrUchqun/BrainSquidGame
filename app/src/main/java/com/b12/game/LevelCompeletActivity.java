@@ -17,6 +17,8 @@ public class LevelCompeletActivity extends AppCompatActivity {
     private ImageView stars, retry, menu, next;
     private SharedPreferences sharedPreferences;
     private TextView textView;
+    private int nextLevelNumber;
+    private String level;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,25 +31,29 @@ public class LevelCompeletActivity extends AppCompatActivity {
         textView = findViewById(R.id.complete_text);
         sharedPreferences = getSharedPreferences("LEVELS", MODE_PRIVATE);
         SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELS", MODE_PRIVATE).edit();
-        unLockNextLevel();
+
+
+
         int health = getIntent().getIntExtra("PLAYERHEALTH", 0);
-        String level = getIntent().getStringExtra("LEVELNUMBER");
+        level = getIntent().getStringExtra("LEVELNUMBER");
         int minus = Integer.parseInt(level) - 1;
         if (health == 3) {
             stars.setImageResource(R.drawable.complete_star_3);
             editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_3);
             textView.setText(R.string.string_congratulations);
+            unLockNextLevel();
         }
-
         if (health == 2) {
             stars.setImageResource(R.drawable.complete_star_2);
             editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_2);
             textView.setText(R.string.string_congratulations);
+            unLockNextLevel();
         }
         if (health == 1) {
             stars.setImageResource(R.drawable.complete_star_1);
             editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_1);
             textView.setText(R.string.string_congratulations);
+            unLockNextLevel();
         }
 
         if (health == 0) {
@@ -79,8 +85,13 @@ public class LevelCompeletActivity extends AppCompatActivity {
     }
 
     private void unLockNextLevel() {
-
+        sharedPreferences = getSharedPreferences("TOTALSTARS", MODE_PRIVATE);
+        SharedPreferences.Editor editorStatus = getSharedPreferences("STATUS", MODE_PRIVATE).edit();
+        editorStatus.putBoolean(level, true);
+        editorStatus.apply();
     }
+
+
 
     @Override
     public void onBackPressed() {
