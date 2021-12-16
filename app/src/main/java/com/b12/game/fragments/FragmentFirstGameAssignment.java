@@ -57,7 +57,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
     private Random rnd;
-    private int counter = 0, itemCount = 0, playerHealth;
+    private int counter = 10, itemCount = 0, playerHealth;
     private int levelCount, randomItem;
     private Handler handler;
     private String levelTxtBundle;
@@ -143,10 +143,10 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
-                if (counter <= 10) {
+                if (counter >= 0) {
                     circler_progress_txt.setText("" + counter);
                     progressBar.setProgress(counter);
-                    counter++;
+                    counter--;
                     handler.postDelayed(this::run, 1000);
                 } else {
                     handler.removeCallbacks(this::run);
@@ -156,7 +156,6 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                     progressBarHorizontal.setVisibility(View.VISIBLE);
                     imageViewInCard.setVisibility(View.VISIBLE);
                     recyclerViewCount.setVisibility(View.VISIBLE);
-
                     progressBarHorizontalTimer();
                     getRandomImageFromArray();
                 }

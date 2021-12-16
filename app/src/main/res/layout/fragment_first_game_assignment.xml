@@ -82,7 +82,7 @@
             android:background="@drawable/circle_shape"
             android:indeterminate="false"
             android:max="10"
-            android:progress="45"
+            android:progress="10"
             android:progressDrawable="@drawable/circler_timer_background" />
 
         <TextView

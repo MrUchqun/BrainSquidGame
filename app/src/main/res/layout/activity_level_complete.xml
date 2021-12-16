@@ -32,6 +32,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/complete_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="40dp"
@@ -41,17 +42,6 @@
             android:textColor="#FFC400"
             android:textSize="33sp"
             android:visibility="visible" />
-
-        <TextView
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/string_failed"
-            android:textSize="33sp"
-            android:fontFamily="@font/caesar_dressing"
-            android:textColor="#F24E1E"
-            android:gravity="bottom|center_horizontal"
-            android:layout_marginBottom="40dp"/>
 
     </androidx.cardview.widget.CardView>
 

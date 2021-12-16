@@ -26,7 +26,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
     private LinearLayout linearLayout;
     private int levels = 15;
     private TextView allStars;
-
+    private String totalstars;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +37,9 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
         allStars = findViewById(R.id.allStars);
 
         sharedPreferences = getSharedPreferences("TOTALSTARS", MODE_PRIVATE);
-        String totalstars = sharedPreferences.getString("TOTALSTARS", "");
+        totalstars = sharedPreferences.getString("TOTALSTARS", "");
         sharedPreferences = getSharedPreferences("ALLSTARS", MODE_PRIVATE);
-        allStars.setText(totalstars + "/45");
+
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         boolean firstStart = prefs.getBoolean("firstStart", true);
         if (firstStart) {
@@ -68,7 +68,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
         editorAllStars.putInt("ALLSTARS", 0);
         for (int i = 0; i <= levels; i++) {
             editorStars.putInt(Integer.toString(i), R.drawable.stars_0);
-            if (i <= 2) {
+            if (i <= 0) {
                 editorStatus.putBoolean(Integer.toString(i), true);
             } else {
                 editorStatus.putBoolean(Integer.toString(i), false);
@@ -129,6 +129,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString("TOTALSTARS", String.valueOf(totalStars));
         editor.apply();
+        allStars.setText(totalstars + "/45");
     }
 
     @Override
