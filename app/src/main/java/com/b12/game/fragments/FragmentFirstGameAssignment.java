@@ -57,7 +57,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
     private Random rnd;
-    private int counter = 10, itemCount = 0, playerHealth;
+    private int counter = 10, itemCount = 0, playerHealth, randomImagesCount = 6;
     private int levelCount, randomItem;
     private Handler handler;
     private String levelTxtBundle;
@@ -108,6 +108,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         if (Integer.parseInt(levelTxtBundle) <= 3) {
             first_game_helth_count.setVisibility(View.GONE);
         }
+        getPlayerHealthImage();
 //        cardView.setCardBackgroundColor(Color.WHITE);
 
         countDownTimer();
@@ -116,10 +117,26 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         return view;
     }
 
+    private void getPlayerHealthImage() {
+        if (Integer.parseInt(levelTxtBundle) > 3) {
+            if (playerHealth == 3)
+                first_game_helth_count.setImageResource(R.drawable.player_health_full);
+            if (playerHealth == 2)
+                first_game_helth_count.setImageResource(R.drawable.player_health_two);
+            if (playerHealth == 1)
+                first_game_helth_count.setImageResource(R.drawable.player_health_one);
+            if (playerHealth == 0) {
+                first_game_helth_count.setImageResource(R.drawable.player_health_null);
+                endGame();
+            }
+        }
+    }
+
 
     @SuppressLint("ClickableViewAccessibility")
     private void generateImage() {
-        for (int i = 0; i < 10; i++) {
+        int minus = Integer.parseInt(levelTxtBundle) - 1;
+        for (int i = 0; i < randomImagesCount + minus; i++) {
             int value = rnd.nextInt(4);
             gameItems.add(tempItems.get(value));
         }
@@ -134,8 +151,6 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         recyclerViewImages.setItemAnimator(null);
         firstGameAdapter = new FirstGameAdapter(gameItems);
         recyclerViewImages.setAdapter(firstGameAdapter);
-
-
     }
 
     private void countDownTimer() {
@@ -237,6 +252,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         } else {
             playerHealth = playerHealth - 1;
             SharedPreferences.Editor editorLevelNumber = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+            editorLevelNumber.putInt("playerHealth", playerHealth);
             editorLevelNumber.putInt("playerHealth", playerHealth);
             editorLevelNumber.apply();
             layout.setBackgroundColor(Color.parseColor("#F24E1E"));

@@ -130,6 +130,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
         editor.putString("TOTALSTARS", String.valueOf(totalStars));
         editor.apply();
         allStars.setText(totalstars + "/45");
+
     }
 
     @Override
