@@ -6,7 +6,7 @@
         android:color="@color/light_pink" />
     <corners android:radius="200dp" />
     <padding
-        android:bottom="55dp"
+        android:bottom="45dp"
         android:left="45dp"
         android:right="45dp"
         android:top="45dp" />
