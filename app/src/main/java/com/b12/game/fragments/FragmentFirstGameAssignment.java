@@ -57,7 +57,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
     private Random rnd;
-    private int counter = 10, itemCount = 0, playerHealth, randomImagesCount = 6;
+    private int counter = 10,horizontalCounter = 5, itemCount = 0, playerHealth, randomImagesCount = 6;
     private int levelCount, randomItem;
     private Handler handler;
     private String levelTxtBundle;
@@ -183,9 +183,9 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                counter++;
-                progressBarHorizontal.setProgress(counter);
-                if (counter == 100) {
+                horizontalCounter++;
+                progressBarHorizontal.setProgress(horizontalCounter);
+                if (horizontalCounter == 100) {
                     playerHealth = playerHealth - 1;
                     SharedPreferences.Editor editorLevelNumber = getActivity().getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
                     editorLevelNumber.putInt("playerHealth", playerHealth);
@@ -198,7 +198,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
                 }
             }
         };
-        timer.schedule(timerTask, 0, 100);
+        timer.schedule(timerTask, 0, 50);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -213,7 +213,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         Random rnd = new Random();
         answersList.add(new FirstGameItem(itemCount));
         while (answersList.size() < 4) {
-            int random = rnd.nextInt(5) + 1;
+            int random = rnd.nextInt(6) + 1;
             if (!answersList.contains(new FirstGameItem(random)))
                 answersList.add(new FirstGameItem(random));
         }
