@@ -42,4 +42,28 @@ public class Base {
         sharedPreferences.edit().putBoolean(key, msg).apply();
     }
 
+    public boolean getIsVolumeOn(String key){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        return sharedPreferences.getBoolean(key, true);
+    }
+
+    public void setWinDate(String key, String msg){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        sharedPreferences.edit().putString(key, msg).apply();
+    }
+
+    public String getDate(String key){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        return sharedPreferences.getString(key, "You haven`t won yet");
+    }
+
+    public void setWinTime(String key, String msg){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        sharedPreferences.edit().putString(key, msg).apply();
+    }
+
+    public String getWinTime(String key){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        return sharedPreferences.getString(key, "Win the game!");
+    }
 }

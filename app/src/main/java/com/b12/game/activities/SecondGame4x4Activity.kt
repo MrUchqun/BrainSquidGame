@@ -54,6 +54,10 @@ class SecondGame4x4Activity : AppCompatActivity() {
         loadMap()
         loadNumbers(numbers)
 
+        findViewById<ImageView>(R.id.help_for_4x4).setOnClickListener {
+            Toast.makeText(applicationContext,"Press 2 seconds to see image", Toast.LENGTH_SHORT).show()
+        }
+
         findViewById<ImageView>(R.id.help_for_4x4).setOnLongClickListener(View.OnLongClickListener {
             Log.d("Click", "Clicked")
             val countDownTimer = object: CountDownTimer(2000, 1000){

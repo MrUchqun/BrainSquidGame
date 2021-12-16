@@ -9,15 +9,17 @@ import android.os.SystemClock
 import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import com.b12.game.Base
 import com.b12.game.CustomWinnerAlert
 import com.b12.game.R
+import java.text.SimpleDateFormat
 import java.util.*
 
 class SecondGame3x3Activity : AppCompatActivity() {
     private val keyTimer: String = "Timer3x3"
     private val keyStepsCount: String = "Steps3x3"
+    private val keyWinTime: String = "WinTime3x3"
+    private val keyWinDate: String = "WinDate3x3"
     private var gridLayout: GridLayout? = null
     private var clickSound: MediaPlayer? = null
     private var btn: Button? = null
@@ -54,6 +56,16 @@ class SecondGame3x3Activity : AppCompatActivity() {
         chronometer?.base = SystemClock.elapsedRealtime()
         loadMap()
         loadNumbers(numbers)
+
+        findViewById<ImageView>(R.id.help_for_3x3).setOnClickListener(View.OnClickListener {
+            //Toast.makeText(this@SecondGame3x3Activity, "Text", Toast.LENGTH_LONG).show()
+            Log.d("Help", "Clicked")
+            Toast.makeText(this,"Press 2 seconds to see image", Toast.LENGTH_SHORT).show()
+        })
+
+//        findViewById<ImageView>(R.id.help_for_3x3).setOnClickListener {
+//            Toast.makeText(applicationContext,"Press 2 seconds to see image", Toast.LENGTH_SHORT).show()
+//        }
 
         findViewById<ImageView>(R.id.help_for_3x3).setOnLongClickListener(View.OnLongClickListener {
             Log.d("Click", "Clicked")
@@ -103,9 +115,10 @@ class SecondGame3x3Activity : AppCompatActivity() {
                 if (isCheckWin()){
                     checkRecord(chronometer?.text.toString(), stepCount)
 
+
                     chronometer?.stop()
-//                    val winningSound: MediaPlayer = MediaPlayer.create(this, R.raw.applause)
-//                    if (Base.getInstance()?.getIsValumeOn("Volume")!!) winningSound.start()
+                    val winningSound: MediaPlayer = MediaPlayer.create(this, R.raw.applause)
+                    if (Base.getInstance()?.getIsVolumeOn("Volume")!!) winningSound.start()
 
                     val customWinnerAlert = CustomWinnerAlert(this, keyTimer, keyStepsCount)
                     customWinnerAlert.setTimer(chronometer?.text.toString())
@@ -114,7 +127,7 @@ class SecondGame3x3Activity : AppCompatActivity() {
 
                     customWinnerAlert.show()
                     customWinnerAlert.getHome()?.setOnClickListener {
-//                        winningSound.stop()
+                        winningSound.stop()
                         finish()
                     }
                     customWinnerAlert.getReplay()?.setOnClickListener {
@@ -196,11 +209,16 @@ class SecondGame3x3Activity : AppCompatActivity() {
         val recordSteps = Base.getInstance()?.getStepCount(keyStepsCount)
         val recordMinut = (recordTime?.get(0).toString()+recordTime?.get(1).toString()).toInt()
         val recordSecund = (recordTime?.get(3).toString()+recordTime?.get(4).toString()).toInt()
+        val currentDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        val currentTime: String = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
 
         if (msgMinut < recordMinut || msgMinut == recordMinut && msgSecund < recordSecund || msgMinut == recordMinut && msgSecund == recordSecund && steps < recordSteps!! || recordTime.equals("00:00")){
             Base.getInstance()?.setFinishedTime(keyTimer, msg)
             Base.getInstance()?.setStepCount(keyStepsCount, steps)
+            Base.getInstance()?.setWinDate(keyWinDate, currentDate)
+            Base.getInstance()?.setWinTime(keyWinTime, currentTime)
             newRecord = true
         } else newRecord = false
+
     }
 }

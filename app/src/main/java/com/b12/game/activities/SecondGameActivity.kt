@@ -1,11 +1,14 @@
 package com.b12.game.activities
 
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import android.view.Gravity
+import android.view.PointerIcon
 import android.view.View
 import android.widget.*
 import androidx.cardview.widget.CardView
@@ -18,7 +21,7 @@ import java.util.*
 
 class SecondGameActivity : AppCompatActivity() {
 
-    val games = arrayOf("3x3", "4x4", "5x5")
+    val games = arrayOf("3 x 3", "4 x 4", "5 x 5")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,9 +59,16 @@ class SecondGameActivity : AppCompatActivity() {
         val arrayAdapter = ArrayAdapter(applicationContext,android.R.layout.simple_spinner_item, games)
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner?.adapter = arrayAdapter
+        spinner?.gravity = Gravity.CENTER
 
         spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+
+                (p0?.getChildAt(0) as TextView).textSize = 22f
+                (p0.getChildAt(0) as TextView).setTextColor(Color.WHITE)
+                (p0.getChildAt(0) as TextView).gravity = Gravity.CENTER
+                //(p0.getChildAt(0) as TextView).width = spinner?.width!!
+
                  val keyTimer = "Timer${games[p2]}"
                  val keyStepsCount = "Steps${games[p2]}"
                 stepRecords?.text = Base.getInstance().getStepCount(keyStepsCount).toString()
