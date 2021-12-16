@@ -131,7 +131,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/rating_squid_puzzle"
+            android:id="@+id/records_squid_puzzle"
             app:cardCornerRadius="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="30dp"
@@ -142,7 +142,7 @@
             app:cardBackgroundColor="@color/button_color">
 
             <TextView
-                android:text="@string/puzzle_rating"
+                android:text="@string/puzzle_high_scores"
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:paddingVertical="10dp"
