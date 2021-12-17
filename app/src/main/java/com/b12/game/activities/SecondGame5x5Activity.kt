@@ -15,8 +15,8 @@ import com.b12.game.R
 import java.util.*
 
 class SecondGame5x5Activity : AppCompatActivity() {
-    private val keyTimer: String = "Timer5x5"
-    private val keyStepsCount: String = "Steps5x5"
+    private val keyTimer: String = "Timer5 x 5"
+    private val keyStepsCount: String = "Steps5 x 5"
     private var gridLayout: GridLayout? = null
     private var clickSound: MediaPlayer? = null
     private var btn: Button? = null
@@ -125,6 +125,7 @@ class SecondGame5x5Activity : AppCompatActivity() {
                         restart()
                         customWinnerAlert.dismiss()
                     }
+                    customWinnerAlert.setOnCancelListener { restart() }
                 }
             }
         }

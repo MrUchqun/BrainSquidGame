@@ -1,5 +1,6 @@
 package com.b12.game.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.Drawable
@@ -46,6 +47,7 @@ class SecondGameActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("ResourceType")
     private fun showBottomSheetDialog(){
         val bottomSheetDialog = BottomSheetDialog(this)
         bottomSheetDialog.setContentView(R.layout.bottom_sheet_for_records)
@@ -55,6 +57,8 @@ class SecondGameActivity : AppCompatActivity() {
         val timeRecords = bottomSheetDialog.findViewById<TextView>(R.id.recordTime)
 
         bottomSheetDialog.show()
+        //bottomSheetDialog.window?.setBackgroundDrawableResource(R.drawable.shape_black_border_inwhite)
+        //bottomSheetDialog.window?.setBackgroundDrawableResource(R.style.AppBottomSheetDialogTheme)
 
         val arrayAdapter = ArrayAdapter(applicationContext,android.R.layout.simple_spinner_item, games)
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

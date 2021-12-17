@@ -15,8 +15,8 @@ import com.b12.game.R
 import java.util.*
 
 class SecondGame4x4Activity : AppCompatActivity() {
-    private val keyTimer: String = "Timer4x4"
-    private val keyStepsCount: String = "Steps4x4"
+    private val keyTimer: String = "Timer4 x 4"
+    private val keyStepsCount: String = "Steps4 x 4"
     private var gridLayout: GridLayout? = null
     private var clickSound: MediaPlayer? = null
     private var btn: Button? = null
@@ -124,6 +124,7 @@ class SecondGame4x4Activity : AppCompatActivity() {
                         restart()
                         customWinnerAlert.dismiss()
                     }
+                    customWinnerAlert.setOnCancelListener { restart() }
                 }
             }
         }
