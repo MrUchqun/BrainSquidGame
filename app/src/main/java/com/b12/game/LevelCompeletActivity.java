@@ -67,6 +67,7 @@ public class LevelCompeletActivity extends AppCompatActivity {
             }
         } else {
             if (health == 3) {
+                retry.setVisibility(View.INVISIBLE);
                 stars.setImageResource(R.drawable.complete_star_3);
                 editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_3);
                 textView.setText(R.string.string_congratulations);
@@ -108,6 +109,20 @@ public class LevelCompeletActivity extends AppCompatActivity {
                 editorLevelNumber.putInt("levelCount", 1);
                 editorLevelNumber.apply();
                 Intent intent = new Intent(LevelCompeletActivity.this, GameActivity1.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+                editorLevelNumber.putString("levelnum", level);
+                editorLevelNumber.putInt("levelCount", 1);
+                editorLevelNumber.putInt("playerHealth", 3);
+                editorLevelNumber.apply();
+                Intent intent = new Intent(LevelCompeletActivity.this, FragmentHolder.class);
                 startActivity(intent);
                 finish();
             }

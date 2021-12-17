@@ -45,18 +45,20 @@ public class FragmentHolder extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean("firstgame", false);
+                editor.apply();
                 dialog.dismiss();
                 mainGame();
             }
         });
-        dialog.onBackPressed();
+
 
         dialog.show();
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putBoolean("firstgame", false);
-        editor.apply();
+
     }
+
 
     public void mainGame() {
         Fragment someFragment = new FragmentFirstGameAssignment();
@@ -68,6 +70,7 @@ public class FragmentHolder extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        dialog.dismiss();
         Intent intent = new Intent(FragmentHolder.this, GameActivity1.class);
         startActivity(intent);
         finish();
