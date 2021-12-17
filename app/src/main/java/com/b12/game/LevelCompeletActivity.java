@@ -19,8 +19,9 @@ public class LevelCompeletActivity extends AppCompatActivity {
     private ImageView stars, retry, menu, next;
     private SharedPreferences sharedPreferences;
     private TextView textView;
-    private int nextLevelNumber;
+    private int nextLevelNumber, currentLevelStar;
     private String level, totalStars;
+    private SharedPreferences.Editor editorLevelNumber;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,17 +32,57 @@ public class LevelCompeletActivity extends AppCompatActivity {
         menu = findViewById(R.id.complete_home);
         next = findViewById(R.id.complete_next);
         textView = findViewById(R.id.complete_text);
-        sharedPreferences = getSharedPreferences("LEVELS", MODE_PRIVATE);
-        SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELS", MODE_PRIVATE).edit();
-
-
-        int health = getIntent().getIntExtra("PLAYERHEALTH", 0);
         level = getIntent().getStringExtra("LEVELNUMBER");
+        sharedPreferences = getSharedPreferences("LEVELS", MODE_PRIVATE);
+        editorLevelNumber = getSharedPreferences("LEVELS", MODE_PRIVATE).edit();
+        sharedPreferences = getSharedPreferences("LEVELS", MODE_PRIVATE);
+        currentLevelStar = sharedPreferences.getInt(level, 0);
+
+
+        setLevelStars();
+
+
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNextlevel();
+            }
+        });
+
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+                editorLevelNumber.putInt("levelCount", 1);
+                editorLevelNumber.apply();
+                Intent intent = new Intent(LevelCompeletActivity.this, GameActivity1.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+            editorLevelNumber.putString("levelnum", level);
+            editorLevelNumber.putInt("levelCount", 1);
+            editorLevelNumber.putInt("playerHealth", 3);
+            editorLevelNumber.apply();
+            Intent intent = new Intent(LevelCompeletActivity.this, FragmentHolder.class);
+            startActivity(intent);
+            finish();
+        }
+    });
+}
+
+    private void setLevelStars() {
+        int health = getIntent().getIntExtra("PLAYERHEALTH", 0);
         int minus = Integer.parseInt(level) - 1;
         if (Integer.parseInt(level) == 1) {
             if (health == 0 || health == 1 || health == 2) {
                 stars.setImageResource(R.drawable.complete_star_0);
-                editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_0);
                 textView.setText(R.string.string_failed);
             } else if (health == 3) {
                 stars.setImageResource(R.drawable.complete_star_3);
@@ -52,7 +93,6 @@ public class LevelCompeletActivity extends AppCompatActivity {
         } else if (Integer.parseInt(level) == 2) {
             if (health == 0 || health == 1) {
                 stars.setImageResource(R.drawable.complete_star_0);
-                editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_0);
                 textView.setText(R.string.string_failed);
             } else if (health == 2) {
                 stars.setImageResource(R.drawable.complete_star_2);
@@ -86,47 +126,11 @@ public class LevelCompeletActivity extends AppCompatActivity {
                 unLockNextLevel();
             }
 
-            if (health == 0) {
-                stars.setImageResource(R.drawable.complete_star_0);
-                editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_0);
-                textView.setText(R.string.string_failed);
-            }
+
         }
 
 
         editorLevelNumber.apply();
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openNextlevel();
-            }
-        });
-
-        menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
-                editorLevelNumber.putInt("levelCount", 1);
-                editorLevelNumber.apply();
-                Intent intent = new Intent(LevelCompeletActivity.this, GameActivity1.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        retry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
-                editorLevelNumber.putString("levelnum", level);
-                editorLevelNumber.putInt("levelCount", 1);
-                editorLevelNumber.putInt("playerHealth", 3);
-                editorLevelNumber.apply();
-                Intent intent = new Intent(LevelCompeletActivity.this, FragmentHolder.class);
-                startActivity(intent);
-                finish();
-            }
-        });
     }
 
     private void openNextlevel() {
