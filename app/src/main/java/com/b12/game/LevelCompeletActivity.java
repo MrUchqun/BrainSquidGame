@@ -2,6 +2,7 @@ package com.b12.game;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,14 +15,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.b12.game.activities.FragmentHolder;
 import com.b12.game.activities.GameActivity1;
 
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.emitters.StreamEmitter;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
+
 public class LevelCompeletActivity extends AppCompatActivity {
 
     private ImageView stars, retry, menu, next;
     private SharedPreferences sharedPreferences;
-    private TextView textView;
-    private int nextLevelNumber, currentLevelStar;
+    private TextView textView, completeTxt;
+    private int nextLevelNumber, currentLevelStar, particlesPerSecond;
     private String level, totalStars;
     private SharedPreferences.Editor editorLevelNumber;
+    private KonfettiView konfettiView;
+    private long emittingTime;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,15 +40,20 @@ public class LevelCompeletActivity extends AppCompatActivity {
         menu = findViewById(R.id.complete_home);
         next = findViewById(R.id.complete_next);
         textView = findViewById(R.id.complete_text);
+        completeTxt = findViewById(R.id.level_complate_txt);
         level = getIntent().getStringExtra("LEVELNUMBER");
         sharedPreferences = getSharedPreferences("LEVELS", MODE_PRIVATE);
         editorLevelNumber = getSharedPreferences("LEVELS", MODE_PRIVATE).edit();
         sharedPreferences = getSharedPreferences("LEVELS", MODE_PRIVATE);
         currentLevelStar = sharedPreferences.getInt(level, 0);
 
-
+        if (level.equals("16")) {
+            completeTxt.setText("GAME COMPLETE");
+            fireWork();
+        } else {
+            completeTxt.setText("LEVEL COMPLETE");
+        }
         setLevelStars();
-
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -66,16 +79,31 @@ public class LevelCompeletActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
-            editorLevelNumber.putString("levelnum", level);
-            editorLevelNumber.putInt("levelCount", 1);
-            editorLevelNumber.putInt("playerHealth", 3);
-            editorLevelNumber.apply();
-            Intent intent = new Intent(LevelCompeletActivity.this, FragmentHolder.class);
-            startActivity(intent);
-            finish();
-        }
-    });
-}
+                editorLevelNumber.putString("levelnum", level);
+                editorLevelNumber.putInt("levelCount", 1);
+                editorLevelNumber.putInt("playerHealth", 3);
+                editorLevelNumber.apply();
+                Intent intent = new Intent(LevelCompeletActivity.this, FragmentHolder.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    private void fireWork() {
+        konfettiView = findViewById(R.id.viewKonfetti);
+        konfettiView.build()
+                .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+                .setDirection(0.0, 359.0)
+                .setSpeed(1f, 5f)
+                .setFadeOutEnabled(false)
+                .setTimeToLive(2000L)
+                .addShapes(Shape.Square.INSTANCE, Shape.Circle.INSTANCE)
+                .addSizes(new Size(12, 5f))
+                .setPosition(0f, konfettiView.getWidth() + 50f, 0f, 0f).streamFor(particlesPerSecond = 300, emittingTime = StreamEmitter.INDEFINITE);
+
+    }
+
 
     private void setLevelStars() {
         int health = getIntent().getIntExtra("PLAYERHEALTH", 0);
