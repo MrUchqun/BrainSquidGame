@@ -99,10 +99,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
             SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
             editorLevelNumber.putString("levelnum", level);
             editorLevelNumber.putInt("levelCount", 1);
-            editorLevelNumber.putInt("levelScore", 0);
             editorLevelNumber.putInt("playerHealth", 3);
-            editorLevelNumber.putInt("iconsCount", 6);
-
             editorLevelNumber.apply();
             Intent intent = new Intent(GameActivity1.this, FragmentHolder.class);
             startActivity(intent);
@@ -123,16 +120,13 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
             } else if (item.getLevelStars() == R.drawable.stars_3) {
                 totalStars = totalStars + 3;
             }
-
         }
         SharedPreferences sharedpreferences = getSharedPreferences("TOTALSTARS", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString("TOTALSTARS", String.valueOf(totalStars));
         editor.apply();
         allStars.setText(totalstars + "/45");
-
     }
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();

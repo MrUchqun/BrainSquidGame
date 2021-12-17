@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.b12.game.activities.FragmentHolder;
 import com.b12.game.activities.GameActivity1;
 
 public class LevelCompeletActivity extends AppCompatActivity {
@@ -91,12 +93,11 @@ public class LevelCompeletActivity extends AppCompatActivity {
         }
 
 
-
         editorLevelNumber.apply();
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                openNextlevel();
             }
         });
 
@@ -111,6 +112,25 @@ public class LevelCompeletActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void openNextlevel() {
+        int nextLevel = Integer.parseInt(level) + 1;
+        sharedPreferences = getSharedPreferences("STATUS", MODE_PRIVATE);
+        boolean nextlevelStatus = sharedPreferences.getBoolean(level, true);
+
+        if (nextlevelStatus) {
+            SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
+            editorLevelNumber.putString("levelnum", Integer.toString(nextLevel));
+            editorLevelNumber.putInt("levelCount", 1);
+            editorLevelNumber.putInt("playerHealth", 3);
+            editorLevelNumber.apply();
+            Intent intent = new Intent(LevelCompeletActivity.this, FragmentHolder.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(this, "Sizda yetarli yulduzchalar mavjud emas", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void unLockNextLevel() {
@@ -143,7 +163,6 @@ public class LevelCompeletActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -154,4 +173,5 @@ public class LevelCompeletActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }
