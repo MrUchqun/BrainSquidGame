@@ -8,7 +8,6 @@
     android:layout_gravity="center_horizontal"
     android:layout_marginHorizontal="5dp"
     android:layout_marginVertical="5dp"
-    android:layout_weight="1"
     app:cardCornerRadius="18dp">
 <LinearLayout
     android:id="@+id/first_game_answer_layout"
@@ -24,7 +23,7 @@
         android:fontFamily="@font/open_sans_semibold"
         android:text="0"
         android:textColor="@color/black"
-        android:textSize="80sp" />
+        android:textSize="60sp" />
 </LinearLayout>
 
 </androidx.cardview.widget.CardView>

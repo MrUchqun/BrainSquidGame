@@ -36,8 +36,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
         linearLayout = findViewById(R.id.game1_linear2);
         allStars = findViewById(R.id.allStars);
 
-        sharedPreferences = getSharedPreferences("TOTALSTARS", MODE_PRIVATE);
-        totalstars = sharedPreferences.getString("TOTALSTARS", "");
+
         sharedPreferences = getSharedPreferences("ALLSTARS", MODE_PRIVATE);
 
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
@@ -99,10 +98,7 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
             SharedPreferences.Editor editorLevelNumber = getSharedPreferences("LEVELSNUMBER", MODE_PRIVATE).edit();
             editorLevelNumber.putString("levelnum", level);
             editorLevelNumber.putInt("levelCount", 1);
-            editorLevelNumber.putInt("levelScore", 0);
             editorLevelNumber.putInt("playerHealth", 3);
-            editorLevelNumber.putInt("iconsCount", 6);
-
             editorLevelNumber.apply();
             Intent intent = new Intent(GameActivity1.this, FragmentHolder.class);
             startActivity(intent);
@@ -114,31 +110,23 @@ public class GameActivity1 extends AppCompatActivity implements FirstGameLevelsA
     }
 
     private void calculateTotalStars(ArrayList<Level> list) {
-        int totalStars = 0;
+        int totalStarsCount = 0;
         for (Level item : list) {
             if (item.getLevelStars() == R.drawable.stars_1) {
-                totalStars = totalStars + 1;
+                totalStarsCount = totalStarsCount + 1;
             } else if (item.getLevelStars() == R.drawable.stars_2) {
-                totalStars = totalStars + 2;
+                totalStarsCount = totalStarsCount + 2;
             } else if (item.getLevelStars() == R.drawable.stars_3) {
-                totalStars = totalStars + 3;
+                totalStarsCount = totalStarsCount + 3;
             }
-
         }
         SharedPreferences sharedpreferences = getSharedPreferences("TOTALSTARS", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString("TOTALSTARS", String.valueOf(totalStars));
+        editor.putString("TOTALSTARS", String.valueOf(totalStarsCount));
         editor.apply();
+        sharedPreferences = getSharedPreferences("TOTALSTARS", MODE_PRIVATE);
+        totalstars = sharedPreferences.getString("TOTALSTARS", "");
         allStars.setText(totalstars + "/45");
-
     }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-
-
-    }
-
 
 }

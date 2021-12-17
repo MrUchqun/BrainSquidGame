@@ -57,7 +57,7 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
     private ProgressBar progressBarHorizontal;
     private CardView cardView;
     private Random rnd;
-    private int counter = 10,horizontalCounter = 5, itemCount = 0, playerHealth, randomImagesCount = 6;
+    private int counter = 10,horizontalCounter = 5, itemCount = 0, playerHealth, randomImagesCount = 5;
     private int levelCount, randomItem;
     private Handler handler;
     private String levelTxtBundle;
@@ -213,7 +213,9 @@ public class FragmentFirstGameAssignment extends Fragment implements FirstGameIt
         Random rnd = new Random();
         answersList.add(new FirstGameItem(itemCount));
         while (answersList.size() < 4) {
-            int random = rnd.nextInt(6) + 1;
+            int count = (int) (0.65 * (double) gameItems.size());
+            if(count < 5) count = 5;
+            int random = rnd.nextInt(count) + 1;
             if (!answersList.contains(new FirstGameItem(random)))
                 answersList.add(new FirstGameItem(random));
         }

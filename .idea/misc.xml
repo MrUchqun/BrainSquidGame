@@ -38,38 +38,37 @@
         <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/activity_main.xml" value="0.24259259259259258" />
         <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/first_game_item_layout.xml" value="0.33" />
         <entry key="..\:/Programming/AndroidProjects/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.25" />
+        <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/drawable/big_icon_background.xml" value="0.15092592592592594" />
         <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/drawable/circle_shape.xml" value="0.16944444444444445" />
+        <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/drawable/circler_timer_background.xml" value="0.15092592592592594" />
         <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/drawable/icons_background.xml" value="0.16944444444444445" />
         <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/activity_level_complete.xml" value="0.22" />
         <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/activity_second_game3x3.xml" value="0.17552083333333332" />
+        <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/activity_second_game4x4.xml" value="0.17552083333333332" />
+        <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/activity_second_game5x5.xml" value="0.17552083333333332" />
+        <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/custom_winner_alert.xml" value="0.17552083333333332" />
         <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/first_game_item_count.xml" value="0.13240740740740742" />
         <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/first_game_item_layout.xml" value="0.17552083333333332" />
-        <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.3333333333333333" />
+        <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.10833333333333334" />
+        <entry key="..\:/Programming/AndroidProjects/GroupProject/Game/app/src/main/res/layout/levels_item.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/drawable-v24/ic_baseline_play_circle_outline_24_white.xml" value="0.290625" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/drawable/game_name_gradient.xml" value="0.26851851851851855" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/drawable/ic_baseline_play_circle_outline_24.xml" value="0.290625" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.22407407407407406" />
-        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/drawable/icons_background.xml" value="0.290625" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/drawable/img_4.xml" value="0.26851851851851855" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/drawable/page_background_gradient.xml" value="0.290625" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/font/alegreya_black_italic.xml" value="0.26851851851851855" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/font/alegreya_sc_black_italic.xml" value="0.26851851851851855" />
-        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_fragment_holder.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_game1.xml" value="0.264" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_second_game3x3.xml" value="0.264" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_second_game4x4.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_second_game5x5.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/activity_splash.xml" value="0.22592592592592592" />
-        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/bottom_sheet_for_records.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/custom_winner_alert.xml" value="0.264" />
-        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/first_game_item_count.xml" value="0.22870370370370371" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/first_game_item_layout.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.22592592592592592" />
-        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/fragment_first_game_end.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/fragment_second_game.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/fragment_start_first_game.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/Uchqun Azimboyev/AndroidStudioProjects/Game/app/src/main/res/layout/levels_item.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>
@@ -78,5 +77,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>
