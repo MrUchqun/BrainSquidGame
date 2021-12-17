@@ -98,7 +98,7 @@
     <GridLayout
         android:background="#A3A1A1"
         android:id="@+id/grid_4x4"
-        android:padding="10dp"
+        android:padding="5dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="15dp"
@@ -286,7 +286,7 @@
         app:layout_constraintLeft_toLeftOf="@id/grid_4x4"
         app:layout_constraintRight_toRightOf="@id/grid_4x4"
         android:src="@drawable/pic_4x4"
-        android:padding="10dp"
+        android:padding="5dp"
         android:scaleType="fitXY"
         android:layout_width="0dp"
         android:layout_height="0dp"/>

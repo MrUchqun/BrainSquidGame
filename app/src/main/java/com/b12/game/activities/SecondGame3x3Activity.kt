@@ -9,6 +9,7 @@ import android.os.SystemClock
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.b12.game.Base
 import com.b12.game.CustomWinnerAlert
 import com.b12.game.R
@@ -16,8 +17,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class SecondGame3x3Activity : AppCompatActivity() {
-    private val keyTimer: String = "Timer3x3"
-    private val keyStepsCount: String = "Steps3x3"
+    private val keyTimer: String = "Timer3 x 3"
+    private val keyStepsCount: String = "Steps3 x 3"
     private val keyWinTime: String = "WinTime3x3"
     private val keyWinDate: String = "WinDate3x3"
     private var gridLayout: GridLayout? = null
@@ -134,6 +135,13 @@ class SecondGame3x3Activity : AppCompatActivity() {
                         restart()
                         customWinnerAlert.dismiss()
                     }
+                    customWinnerAlert.setOnCancelListener { restart() }
+//                    findViewById<ConstraintLayout>(R.id.full_view_3x3).setOnClickListener {
+//                        restart()
+//                    }
+//                    if (!customWinnerAlert.isShowing){
+//                        restart()
+//                    }
                 }
             }
         }
@@ -199,6 +207,7 @@ class SecondGame3x3Activity : AppCompatActivity() {
         y=2
         chronometer?.base = SystemClock.elapsedRealtime()
         stepCount = 0
+        chronometer?.start()
         findViewById<TextView>(R.id.stepCount3x3).text = stepCount.toString()
     }
 

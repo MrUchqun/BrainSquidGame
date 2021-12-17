@@ -12,6 +12,7 @@
         <entry key="..\:/Android Development/Game/app/src/main/res/drawable/ic_baseline_timer_24.xml" value="0.2037037037037037" />
         <entry key="..\:/Android Development/Game/app/src/main/res/drawable/ic_baseline_touch_app_24.xml" value="0.2037037037037037" />
         <entry key="..\:/Android Development/Game/app/src/main/res/drawable/main_shape_1.xml" value="0.2037037037037037" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/drawable/shape_black_border_inwhite.xml" value="0.2037037037037037" />
         <entry key="..\:/Android Development/Game/app/src/main/res/drawable/shape_for_alerts.xml" value="0.20092592592592592" />
         <entry key="..\:/Android Development/Game/app/src/main/res/drawable/shape_white_border.xml" value="0.2037037037037037" />
         <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_game1.xml" value="0.25" />
@@ -20,7 +21,7 @@
         <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_second_game3x3.xml" value="0.19293478260869565" />
         <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_second_game4x4.xml" value="0.19293478260869565" />
         <entry key="..\:/Android Development/Game/app/src/main/res/layout/activity_second_game5x5.xml" value="0.17" />
-        <entry key="..\:/Android Development/Game/app/src/main/res/layout/bottom_sheet_for_records.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Development/Game/app/src/main/res/layout/bottom_sheet_for_records.xml" value="0.22" />
         <entry key="..\:/Android Development/Game/app/src/main/res/layout/custom_winner_alert.xml" value="0.19293478260869565" />
         <entry key="..\:/Android Development/Game/app/src/main/res/layout/fragment_first_game_assignment.xml" value="0.1" />
         <entry key="..\:/Android Development/SquidGame/app/src/main/res/drawable/ic_baseline_play_circle_outline_24.xml" value="0.2074074074074074" />
