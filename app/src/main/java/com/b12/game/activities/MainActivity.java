@@ -11,6 +11,7 @@ import com.b12.game.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private CardView exitCardView, aboutUsCardView ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +19,22 @@ public class MainActivity extends AppCompatActivity {
         //this object changes starus bar !!!
         SplashActivity splashActivity = new SplashActivity();
         splashActivity.changeStatusBarColor(this);
+        exitCardView = findViewById(R.id.exit);
+        exitCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        aboutUsCardView = findViewById(R.id.about_us);
+        aboutUsCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AboutUs.class );
+                startActivity(intent);
+            }
+        });
 
         CardView cardView = findViewById(R.id.play_game_1);
         cardView.setOnClickListener(new View.OnClickListener() {

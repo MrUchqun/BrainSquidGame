@@ -14,6 +14,9 @@
             android:name=".activities.SecondGame5x5Activity"
             android:exported="true" />
         <activity
+            android:name=".activities.AboutUs"
+            android:exported="true" />
+        <activity
             android:name=".activities.SecondGame4x4Activity"
             android:exported="true" />
         <activity
