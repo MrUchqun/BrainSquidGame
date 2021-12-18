@@ -61,7 +61,7 @@ class SecondGame3x3Activity : AppCompatActivity() {
         findViewById<ImageView>(R.id.help_for_3x3).setOnClickListener(View.OnClickListener {
             //Toast.makeText(this@SecondGame3x3Activity, "Text", Toast.LENGTH_LONG).show()
             Log.d("Help", "Clicked")
-            Toast.makeText(this,"Press 2 seconds to see image", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"3 soniya bosib turing", Toast.LENGTH_SHORT).show()
         })
 
 //        findViewById<ImageView>(R.id.help_for_3x3).setOnClickListener {
@@ -221,13 +221,18 @@ class SecondGame3x3Activity : AppCompatActivity() {
         val currentDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
         val currentTime: String = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
 
-        if (msgMinut < recordMinut || msgMinut == recordMinut && msgSecund < recordSecund || msgMinut == recordMinut && msgSecund == recordSecund && steps < recordSteps!! || recordTime.equals("00:00")){
+//        if (msgMinut < recordMinut || msgMinut == recordMinut && msgSecund < recordSecund || msgMinut == recordMinut && msgSecund == recordSecund && steps < recordSteps!! || recordTime.equals("00:00")){
+//            Base.getInstance()?.setFinishedTime(keyTimer, msg)
+//            Base.getInstance()?.setStepCount(keyStepsCount, steps)
+//            Base.getInstance()?.setWinDate(keyWinDate, currentDate)
+//            Base.getInstance()?.setWinTime(keyWinTime, currentTime)
+//            newRecord = true
+//        } else newRecord = false
+
+        if (msg < recordTime!! || msg == recordTime && steps == recordSteps || recordTime == "00:00"){
             Base.getInstance()?.setFinishedTime(keyTimer, msg)
             Base.getInstance()?.setStepCount(keyStepsCount, steps)
-            Base.getInstance()?.setWinDate(keyWinDate, currentDate)
-            Base.getInstance()?.setWinTime(keyWinTime, currentTime)
             newRecord = true
         } else newRecord = false
-
     }
 }

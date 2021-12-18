@@ -56,7 +56,8 @@ class SecondGame5x5Activity : AppCompatActivity() {
         loadNumbers(numbers)
 
         findViewById<ImageView>(R.id.help_for_5x5).setOnClickListener {
-            Toast.makeText(applicationContext,"Press 2 seconds to see image", Toast.LENGTH_LONG).show()
+            //Toast.makeText(applicationContext,"Press 2 seconds to see image", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext,"3 soniya bosib turing", Toast.LENGTH_LONG).show()
         }
 
         findViewById<ImageView>(R.id.help_for_5x5).setOnLongClickListener(View.OnLongClickListener {
@@ -191,10 +192,12 @@ class SecondGame5x5Activity : AppCompatActivity() {
         y=4
         chronometer?.base = SystemClock.elapsedRealtime()
         stepCount = 0
+        chronometer?.start()
         findViewById<TextView>(R.id.stepCount5x5).text = stepCount.toString()
     }
 
     fun checkRecord(msg: String, steps: Int){
+
         val msgMinut = (msg[0].toString()+msg[1].toString()).toInt()
         val msgSecund = (msg[3].toString()+msg[4].toString()).toInt()
         val recordTime = Base.getInstance()?.getFinishedTime(keyTimer)
@@ -202,10 +205,17 @@ class SecondGame5x5Activity : AppCompatActivity() {
         val recordMinut = (recordTime?.get(0).toString()+recordTime?.get(1).toString()).toInt()
         val recordSecund = (recordTime?.get(3).toString()+recordTime?.get(4).toString()).toInt()
 
-        if (msgMinut < recordMinut || msgMinut == recordMinut && msgSecund < recordSecund || msgMinut == recordMinut && msgSecund == recordSecund && steps < recordSteps!! || recordTime.equals("00:00")){
+        if (msg < recordTime!! || msg == recordTime && steps == recordSteps || recordTime == "00:00"){
             Base.getInstance()?.setFinishedTime(keyTimer, msg)
             Base.getInstance()?.setStepCount(keyStepsCount, steps)
             newRecord = true
         } else newRecord = false
+
+//        if (msgMinut < recordMinut || msgMinut == recordMinut && msgSecund < recordSecund || msgMinut == recordMinut && msgSecund == recordSecund && steps < recordSteps!! || recordTime.equals("00:00")){
+//            Base.getInstance()?.setFinishedTime(keyTimer, msg)
+//            Base.getInstance()?.setStepCount(keyStepsCount, steps)
+//            newRecord = true
+//        } else newRecord = false
+//
     }
 }

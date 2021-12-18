@@ -55,7 +55,8 @@ class SecondGame4x4Activity : AppCompatActivity() {
         loadNumbers(numbers)
 
         findViewById<ImageView>(R.id.help_for_4x4).setOnClickListener {
-            Toast.makeText(applicationContext,"Press 2 seconds to see image", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(applicationContext,"Press 2 seconds to see image", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext,"3 soniya bosib turing", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<ImageView>(R.id.help_for_4x4).setOnLongClickListener(View.OnLongClickListener {
@@ -190,6 +191,7 @@ class SecondGame4x4Activity : AppCompatActivity() {
         y=3
         chronometer?.base = SystemClock.elapsedRealtime()
         stepCount = 0
+        chronometer?.start()
         findViewById<TextView>(R.id.stepCount4x4).text = stepCount.toString()
     }
 
@@ -201,7 +203,13 @@ class SecondGame4x4Activity : AppCompatActivity() {
         val recordMinut = (recordTime?.get(0).toString()+recordTime?.get(1).toString()).toInt()
         val recordSecund = (recordTime?.get(3).toString()+recordTime?.get(4).toString()).toInt()
 
-        if (msgMinut < recordMinut || msgMinut == recordMinut && msgSecund < recordSecund || msgMinut == recordMinut && msgSecund == recordSecund && steps < recordSteps!! || recordTime.equals("00:00")){
+//        if (msgMinut < recordMinut || msgMinut == recordMinut && msgSecund < recordSecund || msgMinut == recordMinut && msgSecund == recordSecund && steps < recordSteps!! || recordTime.equals("00:00")){
+//            Base.getInstance()?.setFinishedTime(keyTimer, msg)
+//            Base.getInstance()?.setStepCount(keyStepsCount, steps)
+//            newRecord = true
+//        } else newRecord = false
+
+        if (msg < recordTime!! || msg == recordTime && steps == recordSteps || recordTime == "00:00"){
             Base.getInstance()?.setFinishedTime(keyTimer, msg)
             Base.getInstance()?.setStepCount(keyStepsCount, steps)
             newRecord = true

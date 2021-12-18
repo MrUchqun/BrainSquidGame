@@ -16,20 +16,6 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-<!--    <style name="DialogAnimaton">-->
-<!--        <item name="android:windowEnterAnimation">@anim/slide_in_bottomsheet</item>-->
-<!--        <item name="android:windowExitAnimation">@anim/slide_out_bottomsheet</item>-->
-<!--    </style>-->
-    <style name="AppBottomSheetDialogTheme"
-        parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/AppModalStyle</item>
-    </style>
-
-    <style name="AppModalStyle"
-        parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/shape_black_border_inwhite</item>
-    </style>
-
     <style name="CardStyleGame1">
 <!--        <item name="android:layout_marginStart">5dp</item>-->
 <!--        <item name="android:layout_marginEnd">5dp</item>-->
