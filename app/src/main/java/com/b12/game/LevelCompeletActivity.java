@@ -49,6 +49,7 @@ public class LevelCompeletActivity extends AppCompatActivity {
 
         if (level.equals("16")) {
             completeTxt.setText("GAME COMPLETE");
+            next.setVisibility(View.GONE);
             fireWork();
         } else {
             completeTxt.setText("LEVEL COMPLETE");
@@ -112,6 +113,7 @@ public class LevelCompeletActivity extends AppCompatActivity {
             if (health == 0 || health == 1 || health == 2) {
                 stars.setImageResource(R.drawable.complete_star_0);
                 textView.setText(R.string.string_failed);
+                textView.setTextColor(Color.parseColor("#F24E1E"));
             } else if (health == 3) {
                 stars.setImageResource(R.drawable.complete_star_3);
                 editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_3);
@@ -122,6 +124,7 @@ public class LevelCompeletActivity extends AppCompatActivity {
             if (health == 0 || health == 1) {
                 stars.setImageResource(R.drawable.complete_star_0);
                 textView.setText(R.string.string_failed);
+                textView.setTextColor(Color.parseColor("#F24E1E"));
             } else if (health == 2) {
                 stars.setImageResource(R.drawable.complete_star_2);
                 editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_2);
@@ -135,7 +138,6 @@ public class LevelCompeletActivity extends AppCompatActivity {
             }
         } else {
             if (health == 3) {
-                retry.setVisibility(View.INVISIBLE);
                 stars.setImageResource(R.drawable.complete_star_3);
                 editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_3);
                 textView.setText(R.string.string_congratulations);
@@ -152,6 +154,11 @@ public class LevelCompeletActivity extends AppCompatActivity {
                 editorLevelNumber.putInt(Integer.toString(minus), R.drawable.stars_1);
                 textView.setText(R.string.string_congratulations);
                 unLockNextLevel();
+            }
+            if (health == 0) {
+                stars.setImageResource(R.drawable.complete_star_0);
+                textView.setText(R.string.string_failed);
+                textView.setTextColor(Color.parseColor("#F24E1E"));
             }
 
 

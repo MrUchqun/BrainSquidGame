@@ -36,8 +36,6 @@ public class FragmentHolder extends AppCompatActivity {
         } else {
             mainGame();
         }
-
-
     }
 
     private void onlyOnceStart() {
@@ -55,12 +53,8 @@ public class FragmentHolder extends AppCompatActivity {
                 mainGame();
             }
         });
-
-
         dialog.show();
-
     }
-
 
     public void mainGame() {
         Fragment someFragment = new FragmentFirstGameAssignment();
