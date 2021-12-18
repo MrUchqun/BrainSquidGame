@@ -2,15 +2,46 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/page_background_gradient"
     android:layout_height="match_parent"
+    android:background="@drawable/page_background_gradient"
+    android:orientation="vertical"
     tools:context=".activities.SplashActivity">
+
+    <!--    <TextView-->
+    <!--    android:layout_gravity="center_horizontal"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:fontFamily="@font/caesar_dressing"-->
+    <!--        android:text="BRAIN"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        android:textSize="90sp" />-->
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
         android:src="@drawable/app_logo_squid_game" />
 
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/b12"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom"
+        android:text="from"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/b12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom"
+        android:text="Android B12"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:layout_marginBottom="30dp"/>
 </RelativeLayout>
