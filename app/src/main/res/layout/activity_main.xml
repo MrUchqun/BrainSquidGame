@@ -153,7 +153,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="@string/settings"
+                        android:text="@string/about_us"
                         android:textColor="@color/white"
                         android:textSize="25sp" />
 
@@ -177,7 +177,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="@string/about_us"
+                        android:text="@string/exit"
                         android:textColor="@color/white"
                         android:textSize="25sp" />
 
