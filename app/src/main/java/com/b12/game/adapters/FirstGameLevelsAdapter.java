@@ -47,8 +47,9 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
         if (levelStatus) {
             holder.textView.setText(level.getLevelNumber());
         } else {
-            holder.textView.setText("Lock");
-            holder.imageView.setVisibility(View.INVISIBLE);
+            holder.imageView2.setImageResource(R.drawable.lock);
+            holder.textView.setVisibility(View.GONE);
+            holder.imageView.setVisibility(View.GONE);
         }
         holder.imageView.setImageResource(level.getLevelStars());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +67,7 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
 
     public class FirstGameLevelsViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
-        ImageView imageView;
+        ImageView imageView, imageView2;
         TextView textView;
         LinearLayout layout;
 
@@ -74,6 +75,7 @@ public class FirstGameLevelsAdapter extends RecyclerView.Adapter<FirstGameLevels
             super(itemView);
             cardView = itemView.findViewById(R.id.levels_card);
             imageView = itemView.findViewById(R.id.levels_stars);
+            imageView2 = itemView.findViewById(R.id.levels_lock_img);
             textView = itemView.findViewById(R.id.levels_number);
             layout = itemView.findViewById(R.id.levels_linear);
 
