@@ -36,6 +36,13 @@ public class FragmentHolder extends AppCompatActivity {
         } else {
             mainGame();
         }
+        SharedPreferences four = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean levelfour = prefs.getBoolean("firstgame", true);
+        if (firstStart) {
+            onlyOnceStart();
+        } else {
+            mainGame();
+        }
     }
 
     private void onlyOnceStart() {
